@@ -11,7 +11,7 @@ module.exports = {
                 { name: '🎵 Music', value: '`play`, `stop`, `skip`, `queue`\n`3d`, `bassboost`, `echo`, `karaoke`\n`nightcore`, `vaporwave`, `loop`' },
                 { name: '😂 Fun', value: '`dankmeme`, `wholesomememe`' },
                 { name: '🔧 Utility', value: '`avatar`, `mcserver`, `ping`\n`corona`, `reportbug`,`anime`' },
-                { name: '⚙  Admin', value: '`ban`, `unban`, `kick`, `clear`' }
+                { name: '⚙  Moderation', value: '`ban`, `unban`, `kick`, `clear`' }
             )
             .setFooter('Music commands are a bit delayed but they do work!');
         message.channel.send(helpEmbed)
