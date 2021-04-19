@@ -32,8 +32,16 @@ for (const folder of commandFolders) {
 
 
 client.once('ready', () => {
+    const serverIn = await client.guilds.cache.size;
     console.log('NearBeta is online.')
-    client.user.setActivity(db.get(`status`))
+    client.user.setPresence({
+         activity: { 
+            name: 'to -help || -ping',
+            type: "LISTENING"
+        }, 
+        status: 'idle' })
+        .catch(console.error);
+    // client.user.setActivity(db.get(`status`))
 })
 
 client.on('message', async message => {
