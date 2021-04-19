@@ -4,7 +4,6 @@ module.exports = {
     name: ['embed'],
     aliases: ['create-embed'],
     // usage: '+embed #Channel-Name ^Title^Description^Footer^Color^Thumbnail^Link^Image-Link', // Optional
-
     async execute(client, command, message, args, Discord){
         const channel = message.mentions.channels.first()
         if(!channel) return message.reply('Provide A Channel To Send Embed') // If No Channel Is Provided
@@ -28,4 +27,5 @@ module.exports = {
         .setImage(image)
         .setThumbnail(thu)
         message.channel.send(embed)
+    
     }}
