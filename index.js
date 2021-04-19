@@ -32,7 +32,6 @@ for (const folder of commandFolders) {
 
 
 client.once('ready', () => {
-    const serverIn = await client.guilds.cache.size;
     console.log('NearBeta is online.')
     client.user.setPresence({
          activity: { 
