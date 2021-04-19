@@ -10,7 +10,7 @@ module.exports =  {
   async execute(client, command, message, args, Discord){
     //checking args
    if (!args[0]) {
-     return message.channel.send("> Please Give ous the name of anime");
+     return message.channel.send("> Enter an anime's name!\nUsage = `-anime {anime name}`");
       
     }
     //main part
