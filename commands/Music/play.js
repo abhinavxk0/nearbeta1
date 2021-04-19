@@ -10,5 +10,6 @@ module.exports = {
         const music = args.join(" ");
 
         client.distube.play(message, music)
+    message.react('🟢');
     }
 }

@@ -6,6 +6,7 @@ module.exports = {
         
         if (["repeat", "loop"].includes(command))
         client.distube.setRepeatMode(message, parseInt(args[0]));
+    message.react('♾');
     }
 }
 

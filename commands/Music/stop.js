@@ -15,6 +15,7 @@ module.exports = {
         } else if (!queue){
            return
         };
+    message.react('🛑');
     } 
 }
         
