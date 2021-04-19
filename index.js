@@ -78,7 +78,7 @@ client.on('message', async message => {
         message.reply('there was an error trying to execute that command!');
     }
 });
-client.login('ODMzNTY2ODY2MDgwMjY4MzI4.YH0Now.F0-R7dRAlbLBqf4vivqL4O6CLjA');
+client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.OEqZxzbQHdTd4dgmEdcRaa-lGQo');
 
 
 
