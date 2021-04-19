@@ -35,7 +35,7 @@ client.once('ready', () => {
     console.log('NearBeta is online.')
     client.user.setPresence({
          activity: { 
-            name: 'to -help || -ping',
+            name: '-help || -ping',
             type: "LISTENING"
         }, 
         status: 'idle' })
