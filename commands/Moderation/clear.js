@@ -16,6 +16,7 @@ module.exports = {
             message.channel.bulkDelete(messages)
         });
         message.channel.send("> The amount of messages has been deleted successfully!");
+        
     }
 }
         

@@ -11,7 +11,7 @@ module.exports = {
             .addFields(
                 { name: '🎵 Music', value: '`play`, `stop`, `skip`, `queue`\n`3d`, `bassboost`, `echo`, `karaoke`\n`nightcore`, `vaporwave`, `loopnode`' },
                 { name: '😂 Fun', value: '`dankmeme`, `wholesomememe`' },
-                { name: '🔧 Utility', value: '`avatar`, `mcserver`, `ping`\n`corona`, `reportbug`,`anime`' },
+                { name: '🔧 Utility', value: '`avatar`, `mcserver`, `ping`\n`corona`, `reportbug`,`anime`, `embed`' },
                 { name: '⚙  Moderation', value: '`ban`, `unban`, `kick`, `clear`' }
             )
             .setFooter('Music commands are a bit delayed but they do work!');
