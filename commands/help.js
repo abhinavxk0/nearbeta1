@@ -8,7 +8,7 @@ module.exports = {
             .setTitle('Help Command')
             .setThumbnail('https://cdn.discordapp.com/attachments/822106850258321440/822432415364546580/nearrrfulll.jpg')
             .addFields(
-                { name: '🎵 Music', value: '`play`, `stop`, `skip`, `queue`\n`3d`, `bassboost`, `echo`, `karaoke`\n`nightcore`, `vaporwave`, `loopnode`' },
+                { name: '🎵 Music', value: '`play`, `stop`, `skip`, `queue`\n`3d`, `bassboost`, `echo`, `karaoke`\n`nightcore`, `vaporwave`, `loop`' },
                 { name: '😂 Fun', value: '`dankmeme`, `wholesomememe`' },
                 { name: '🔧 Utility', value: '`avatar`, `mcserver`, `ping`\n`corona`, `reportbug`,`anime`' },
                 { name: '⚙  Admin', value: '`ban`, `unban`, `kick`, `clear`' }
