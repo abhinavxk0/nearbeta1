@@ -1,31 +1,30 @@
-const { MessageEmbed } = require("discord.js")
+const Discord = require('discord.js')
 
 module.exports = {
-    name: ['embed'],
-    aliases: ['create-embed'],
-    // usage: '+embed #Channel-Name ^Title^Description^Footer^Color^Thumbnail^Link^Image-Link', // Optional
-    async execute(client, command, message, args, Discord){
-        const channel = message.mentions.channels.first()
-        if(!channel) return message.reply('Provide A Channel To Send Embed') // If No Channel Is Provided
-        const title = text.split('^')[1] // [1] Because args[0] Is Channel // You Can Keep Anything Instead Of >
-        if(!title) return message.reply('Provide Title For Embed.') // If No Title Is Provided
-        const description = text.split('^')[2] // [1] Because args[0] Is Channel // You Can Keep Anything Instead Of >
-        if(!description) return message.reply('Provide Description For Embed.') // If No Description Is Provided
-        const footer = text.split('^')[3] // [1] Because args[0] Is Channel // You Can Keep Anything Instead Of >
-        if(!footer) return message.reply('Provide Footer For Embed.') // If No Footer Is Provided
-        const color = text.split('^')[4] // [1] Because args[0] Is Channel // You Can Keep Anything Instead Of >
-        if(!color) return message.reply('Provide Color For Embed.') // If No Color Is Provided
-        const thu = text.split('^')[5] // [1] Because args[0] Is Channel // You Can Keep Anything Instead Of >
-        if(!thu) return message.reply('Provide Thumbnail For Embed.') // If No Thumbnail Is Provided
-        const image = text.split('^')[6] // [1] Because args[0] Is Channel // You Can Keep Anything Instead Of >
-        if(!image) return message.reply('Provide Image For Embed.') // If No Image Is Provided
-        const embed = new MessageEmbed()
-        .setTitle(title)
-        .setDescription(description)
+    name: "embed",
+    description: "make embed",
+    async run(client, command, message, args, Discord){
+        if(!message.member.hasPermission('MANAGE_MESSAGES')) return // if the member does not have permissions to mannage messages, return/stop reading the code.
+        let title = args[0] // args[0] is the first word or number after the command name
+        let color = args[1] 
+        let description = args.slice(2).join(" ") // args.slice(2).join(" ") means we're taking all the arguments including and after the second argument. An argument is just a word or number.
+        const error = new Discord.MessageEmbed() 
+        .setColor('RANDOM')
+        .setTitle('**❌ERROR INVALID ARGS**')
+        .setDescription('`{prefix}embed, title(one word), color(hex code or basic colors in caps; i.e(YELLOW), description(embed body))`')
+
+        if(!title) return message.channel.send(error) // ! means no, so if there's no title, return and send the error embed
+        if(!color) return message.channel.send(error)
+        if(!description) return message.channel.send(error)
+
+
+        const embed = new Discord.MessageEmbed()
+        .setTitle(`**${title}**`)
         .setColor(color)
-        .setFooter(footer)
-        .setImage(image)
-        .setThumbnail(thu)
+        .setDescription(description)
+        .setFooter(`Embed created by ${message.author.username}`)
+        message.delete() // this deletes the command
+
         message.channel.send(embed)
-    
-    }}
+    }
+}
