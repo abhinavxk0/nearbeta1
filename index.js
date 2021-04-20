@@ -6,9 +6,9 @@ const db = require('quick.db');
 const got = require('got');
 const DisTube = require('distube');
 const prefix = '-';
+const fetch = require("node-fetch").default;
 
 client.cooldowns = new Discord.Collection();
-
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
 client.distube
     .on("playSong", (message, queue, song) => message.channel.send(
@@ -45,7 +45,6 @@ client.once('ready', () => {
 })
 
 client.on('message', async message => {
-
     if (!message.content.startsWith(prefix) || message.author.bot || (!message.guild)) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
@@ -83,7 +82,7 @@ client.on('message', async message => {
         command.execute(client, command, message, args, Discord);
     } catch (error) {
         console.error(error);
-        message.reply('there was an error trying to execute that command!');
+        message.reply('There was an error trying to execute that command!');
     }
 });
 client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.7kc6tyNkQ-pLzGxuMZ0ZzDpawSU');
