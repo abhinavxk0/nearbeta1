@@ -38,7 +38,7 @@ client.once('ready', () => {
             name: 'xavier fixing bugs',
             type: "LISTENING"
         }, 
-        status: 'idle' })
+        status: 'online' })
         .catch(console.error);
     // client.user.setActivity(db.get(`status`))
 })
