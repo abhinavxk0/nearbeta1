@@ -6,7 +6,6 @@ const db = require('quick.db');
 const got = require('got');
 const DisTube = require('distube');
 const prefix = '-';
-const fetch = require("node-fetch").default;
 
 client.cooldowns = new Discord.Collection();
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
@@ -30,8 +29,6 @@ for (const folder of commandFolders) {
         client.commands.set(command.name, command);
     }
 }
-
-
 client.once('ready', () => {
     console.log('NearBeta is online.')
     client.user.setPresence({

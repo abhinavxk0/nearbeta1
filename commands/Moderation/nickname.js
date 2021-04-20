@@ -1,5 +1,6 @@
 module.exports = {
     name: 'nickname',
+    cooldown: 10,
     aliases: ['nick'],
     async execute(client, command, message, args, Discord) {
         const member = message.mentions.members.first() || message.member;
