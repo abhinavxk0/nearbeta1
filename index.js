@@ -6,6 +6,7 @@ const db = require('quick.db');
 const got = require('got');
 const DisTube = require('distube');
 const prefix = '-';
+
 client.cooldowns = new Discord.Collection();
 
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
@@ -85,7 +86,7 @@ client.on('message', async message => {
         message.reply('there was an error trying to execute that command!');
     }
 });
-client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.kyYrZoqQq74LWNXHd_JekcLaGgw');
+client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.7kc6tyNkQ-pLzGxuMZ0ZzDpawSU');
 
 
 
