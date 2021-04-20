@@ -1,6 +1,6 @@
 module.exports = {
     name: 'reportbug',
-    aliases: ['report, support'],
+    aliases: ['report', 'support'],
     description: "report bug",
     execute(client, command, message, args, Discord) {
         const supportEmbed = new Discord.MessageEmbed()
