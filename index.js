@@ -35,7 +35,7 @@ client.once('ready', () => {
     console.log('NearBeta is online.')
     client.user.setPresence({
          activity: { 
-            name: '-help || -ping',
+            name: 'xavier fixing bugs',
             type: "LISTENING"
         }, 
         status: 'idle' })
@@ -85,7 +85,7 @@ client.on('message', async message => {
         message.reply('there was an error trying to execute that command!');
     }
 });
-client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.OEqZxzbQHdTd4dgmEdcRaa-lGQo');
+client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.kyYrZoqQq74LWNXHd_JekcLaGgw');
 
 
 
