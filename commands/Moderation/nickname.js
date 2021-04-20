@@ -14,8 +14,8 @@ module.exports = {
         try {
             member.setNickname(arguments)
         } catch (err) {
-            console.log(err);
             message.channel.send("> I do not have permission to set" + member.toString() + " nickname!")
         }
+    message.react('✅');
     }
 }

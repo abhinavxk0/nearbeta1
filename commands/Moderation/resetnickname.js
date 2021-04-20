@@ -12,6 +12,7 @@ module.exports = {
         } catch (err) {
             message.channel.send("> I do not have permission to reset" + member.toStringe() + "nickname!")
         }
+    message.react('✅');
     }
 
 }

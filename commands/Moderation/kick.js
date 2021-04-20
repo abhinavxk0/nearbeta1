@@ -12,6 +12,7 @@ module.exports = {
             const memberTarget = message.guild.members.cache.get(target.id);
             memberTarget.kick();
             message.channel.send("> User has been kicked");
+            message.react('🦵')
         }else{
             message.channel.send(`> You coudn't kick that member!`);
         }
