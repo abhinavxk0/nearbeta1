@@ -14,7 +14,7 @@ module.exports = {
                 { name: '🔧 Utility', value: '`avatar`, `mcserver`, `ping`\n`corona`, `reportbug`,`anime`, `embed`' },
                 { name: '⚙  Moderation', value: '`ban`, `unban`, `kick`, `clear`' }
             )
-            .setFooter('Music commands are a bit delayed but they do work!');
+            .setFooter(`${message.author.username} have a amazing day ahead!`);
         message.channel.send(helpEmbed)
     }
 }
