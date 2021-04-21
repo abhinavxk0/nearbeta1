@@ -35,7 +35,7 @@ module.exports =  {
 
             return message.channel.send({ embed })
         }).catch(err => {
-            console.log(err) //cathing error
+            console.log(err) //catching error
             return message.channel.send(`> No results found for **${search}**!`);
         });
     }

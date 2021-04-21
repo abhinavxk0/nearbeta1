@@ -1,12 +1,10 @@
-const { execute } = require("../Utility/help");
+const { execute } = require("./resume");
 
 module.exports = {
-    name: 'volume',
-    aliases: ['vol'],
+    name: 'seek',
     async execute(client, command, message, args, Discord){
         if (!message.member.voice.channel) return message.channel.send('> You must be in a voice channel to execute this command!')
 
-        client.distube.setVolume(message, args[0]);
-        message.channel.send(`> Volume set to ${args[0]}`)
+        client.distube.seek(message, Number(args[0]))
     }
 }
