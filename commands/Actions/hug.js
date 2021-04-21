@@ -14,7 +14,7 @@ module.exports = {
 
         if(args[0]){
             let user = message.mentions.members.first();
-            embed.setTitle(`${message.author.username} hugs ${message.author.username}!`)
+            embed.setTitle(`${message.author.username} hugs ${args[0]}!`)
         } else {
             embed.setTitle(`${message.author.username} wants a hug!`)
         }
