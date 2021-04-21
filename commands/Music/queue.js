@@ -1,3 +1,5 @@
+const DisTube = require('distube');
+
 module.exports = {
     name: 'queue',
     aliases: ['q'],

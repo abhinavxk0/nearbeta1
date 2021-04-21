@@ -1,4 +1,4 @@
-const distube = require('distube')
+const DisTube = require('distube');
 
 module.exports = {
     name: 'stop',
