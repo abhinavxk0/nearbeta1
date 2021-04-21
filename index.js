@@ -8,6 +8,7 @@ const DisTube = require('distube');
 const prefix = '-';
 
 client.cooldowns = new Discord.Collection();
+
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
 client.distube
     .on("playSong", (message, queue, song) => message.channel.send(
