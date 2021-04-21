@@ -19,7 +19,6 @@ client.distube
     ))
     .on("empty", message => message.channel.send("Channel is empty. Leaving the channel"))
 
-
 client.commands = new Discord.Collection();
 const commandFolders = fs.readdirSync('./commands');
 
