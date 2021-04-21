@@ -12,7 +12,7 @@ module.exports = {
         .setColor('ORANGE').addField('Question:', question)
         .addField('Answer:', replies[result])
         .setFooter(`Asked by ${message.author.username}`);
-      await message.channel.send(embed);
+      await message.channel.send(replies);
     } else {
       await message.channel.send(`**Question:**\n${question}\n**Answer:**\n${replies[result]}`);
     }
