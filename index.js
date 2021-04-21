@@ -34,7 +34,7 @@ client.once('ready', () => {
     console.log('NearBeta is online.')
     client.user.setPresence({
          activity: { 
-            name: 'xavier fixing bugs',
+            name: '-help || -ping',
             type: "LISTENING"
         }, 
         status: 'online' })
@@ -47,7 +47,6 @@ client.on('message', async message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
     //commmand sorting and executing bullshit
-
     const command = client.commands.get(commandName)
         || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if (!command) return;
