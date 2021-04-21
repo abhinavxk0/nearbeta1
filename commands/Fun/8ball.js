@@ -7,7 +7,7 @@ module.exports = {
     const result = Math.floor(Math.random() * replies.length); 
     const question = args.join(' '); 
     if (message.channel.permissionsFor(message.guild.me).has('EMBED_LINKS')) {
-      const replies = new MessageEmbed()
+      const replies = new Discord.MessageEmbed()
         .setAuthor('🎱 The 8 Ball says...')
         .setColor('ORANGE').addField('Question:', question)
         .addField('Answer:', replies[result])
