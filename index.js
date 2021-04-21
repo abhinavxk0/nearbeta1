@@ -9,7 +9,7 @@ const prefix = '-';
 
 client.cooldowns = new Discord.Collection();
 
-client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
+client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnEmpty: true, });
 client.distube
     .on("playSong", (message, queue, song) => message.channel.send(
         `> Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`
@@ -17,6 +17,7 @@ client.distube
     .on("addSong", (message, queue, song) => message.channel.send(
         `> Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`
     ))
+    .on("empty", message => message.channel.send("Channel is empty. Leaving the channel"))
 
 
 client.commands = new Discord.Collection();
