@@ -13,7 +13,8 @@ module.exports = {
       const embed = new MessageEmbed() // create embed 
         .setAuthor('🎱 The 8 Ball says...')
         .setColor('ORANGE').addField('Question:', question)
-        .addField('Answer:', replies[result]);
+        .addField('Answer:', replies[result])
+        .setFooter(`Asked by by ${message.author.username}`);
       await message.channel.send(embed); // send embed message
     } else {
       await message.channel.send(`**Question:**\n${question}\n**Answer:**\n${replies[result]}`); // no permissins so bot will default to a raw message
