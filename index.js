@@ -10,14 +10,14 @@ const prefix = '-';
 client.cooldowns = new Discord.Collection();
 
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnEmpty: true, });
-client.distube
-    .on("playSong", (message, queue, song) => message.channel.send(
+
+client.distube.on("playSong", (message, queue, song) => message.channel.send(
         `> Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`
     ))
-    .on("addSong", (message, queue, song) => message.channel.send(
+client.distube.on("addSong", (message, queue, song) => message.channel.send(
         `> Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`
     ))
-    .on("empty", message => message.channel.send("> Channel is empty. Leaving the channel"))
+client.distube.on("empty", message => message.channel.send("> Channel is empty. Leaving the channel"))
 
 client.commands = new Discord.Collection();
 const commandFolders = fs.readdirSync('./commands');
@@ -82,4 +82,4 @@ client.on('message', async message => {
         message.reply('There was an error trying to execute that command!');
     }
 });
-client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.DgFrq1vVR26Ah1uVncda6NnrN1k');
+client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.X55Wm5x-vlWV6ZXD2SriYJIcQwU');
