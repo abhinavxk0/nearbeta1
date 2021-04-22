@@ -6,18 +6,45 @@ const db = require('quick.db');
 const got = require('got');
 const DisTube = require('distube');
 const prefix = '-';
+//const npEmbed = new Discord.MessageEmbed()
+// .setColor('RANDOM')
+// .setTitle(`Now Playing: ${song.name}-${song.formattedDuration}`)
+// .setFooter(`Requested by: ${song.user}`)
 
+// const addsEmbed = new Discord.MessageEmbed()
+// .setColor('RANDOM')
+// .setTitle(`Added: ${song.name}-${song.formattedDuration}`)
+// .setFooter(`Added by: ${song.user}`)
+
+// const emptyEmbed = new Discord.MessageEmbed()
+// .setColor('RANDOM')
+// .setTitle("Voice chanel is empty, stopping playback and leaving channel.")
 client.cooldowns = new Discord.Collection();
 
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnEmpty: true, });
 
 client.distube.on("playSong", (message, queue, song) => message.channel.send(
-        `> Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`
+    new Discord.MessageEmbed()
+        .setColor('#b0e0e6')
+        .setTitle(`Now Playing: ${song.name}-${song.formattedDuration}`)
+        .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+        .setDescription(`Requested by: ${song.user}`)
+    
     ))
 client.distube.on("addSong", (message, queue, song) => message.channel.send(
-        `> Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`
+    new Discord.MessageEmbed()
+        .setColor('#e6b0e0')
+        .setTitle(`Added: ${song.name}-${song.formattedDuration}`)
+        .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+        .setDescription(`Added by: ${song.user}`)
     ))
-client.distube.on("empty", message => message.channel.send("> Channel is empty. Leaving the channel"))
+client.distube.on("empty", message => message.channel.send(
+    new Discord.MessageEmbed()
+        .setColor('#e0e6b0')
+        .setTitle('Clearing queue and leaving channel!')
+        .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+        .setDescription('Reason: Disconnect because voice channel empty!')
+))
 
 client.commands = new Discord.Collection();
 const commandFolders = fs.readdirSync('./commands');
@@ -82,4 +109,4 @@ client.on('message', async message => {
         message.reply('There was an error trying to execute that command!');
     }
 });
-client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.X55Wm5x-vlWV6ZXD2SriYJIcQwU');
+client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.xdS9mSLj7hi2lUdu8zFq75kNsYA');
