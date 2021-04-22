@@ -109,4 +109,4 @@ client.on('message', async message => {
         message.reply('There was an error trying to execute that command!');
     }
 });
-client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.xdS9mSLj7hi2lUdu8zFq75kNsYA');
+client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.Y9zPKprPQbHpmKp5U2pBXrrmCoc');
