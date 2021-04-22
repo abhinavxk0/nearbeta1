@@ -17,7 +17,7 @@ client.distube
     .on("addSong", (message, queue, song) => message.channel.send(
         `> Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`
     ))
-    .on("empty", message => message.channel.send("Channel is empty. Leaving the channel"))
+    .on("empty", message => message.channel.send("> Channel is empty. Leaving the channel"))
 
 client.commands = new Discord.Collection();
 const commandFolders = fs.readdirSync('./commands');
@@ -83,9 +83,3 @@ client.on('message', async message => {
     }
 });
 client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.DgFrq1vVR26Ah1uVncda6NnrN1k');
-
-
-
-
-
-

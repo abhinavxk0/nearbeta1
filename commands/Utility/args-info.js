@@ -1,9 +1,9 @@
 module.exports = {
 	name: 'args-info',
 	description: 'Information about the arguments provided.',
-    args: true,
+	args: true,
 	execute(client, command, message, args, Discord) {
-		    if (args[0] === 'foo') {
+		if (args[0] === 'foo') {
 			return message.channel.send('bar');
 		}
 

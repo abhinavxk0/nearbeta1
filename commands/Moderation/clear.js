@@ -5,9 +5,9 @@ module.exports = {
     aliases: ['purge', 'delete'],
     description: "Clears messages!",
     async execute(client, command, message, args, Discord) {
-        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("> You need the `MANAGE_MESSAGES` permission!")
-        if(!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.channel.send("> I do not have the `MANAGE_MESSAGES` permission!")
-        
+        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("> You need the `MANAGE_MESSAGES` permission!")
+        if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.channel.send("> I do not have the `MANAGE_MESSAGES` permission!")
+
         if (!args[0]) return message.reply("Please enter the amount of messages to be cleared!");
         if (isNaN(args[0])) return message.reply("Please enter the amount of messages to be cleared!");
         if (args[0] > 100) return message.reply("You can't remove more than 100 messages at a time.");
@@ -16,10 +16,10 @@ module.exports = {
             message.channel.bulkDelete(messages)
         });
         message.channel.send("> The amount of messages has been deleted successfully!");
-        
+
     }
 }
-        
+
 
 
 
