@@ -14,14 +14,14 @@ module.exports = {
             "https://64.media.tumblr.com/e149a5fbabdfd6531f29bba15703bdf5/tumblr_mlzqwoeHzE1sn5lrwo1_500.gif",
             "https://i.pinimg.com/originals/e6/36/47/e636479dafb6be4d4a6c23e2c52a42bf.gif",
             "https://media1.tenor.com/images/50c0ec78664fe643ce2ba898232b2282/tenor.gif",
-            "https://tenor.com/view/anime-cheeks-hugs-gif-14106856",
-            "https://tenor.com/view/anime-hug-sweet-love-gif-14246498",
-            "https://tenor.com/view/chiya-urara-meirochou-anime-saku-gif-8995974",
-            "https://tenor.com/view/anime-hug-love-gif-15900664",
-            "https://tenor.com/view/toilet-bound-hanakokun-anime-anime-hug-gif-16831471",
-            "https://tenor.com/view/haikyu-crying-volleyball-anime-bro-hug-gif-7347941",
-            "https://tenor.com/view/happy-hug-anime-gif-19371759",
-            "https://tenor.com/view/crying-anime-kyoukai-no-kanata-hug-hugging-anime-hug-tight-tight-hug-gif-17880570",
+            "https://media1.tenor.com/images/94989f6312726739893d41231942bb1b/tenor.gif",
+            "https://media1.tenor.com/images/969f0f462e4b7350da543f0231ba94cb/tenor.gif",
+            "https://media1.tenor.com/images/34a1d8c67e7b373de17bbfa5b8d35fc0/tenor.gif",
+            "https://media1.tenor.com/images/c7efda563983124a76d319813155bd8e/tenor.gif",
+            "https://media1.tenor.com/images/9dddcb8d880010200af468d781b4bbcd/tenor.gif",
+            "https://media1.tenor.com/images/125cc2baf6227cc6a034858e3204def1/tenor.gif",
+            "https://media1.tenor.com/images/f5e919bfd6afb6b2053bd938443fc2e9/tenor.gif",
+            "https://media1.tenor.com/images/6d40d82e71dc167fd4a247704285fab7/tenor.gif",
         ];
         let pick = gifs[Math.floor(Math.random() * gifs.length)];
 
