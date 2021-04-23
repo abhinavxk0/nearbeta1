@@ -14,6 +14,14 @@ module.exports = {
             "https://64.media.tumblr.com/e149a5fbabdfd6531f29bba15703bdf5/tumblr_mlzqwoeHzE1sn5lrwo1_500.gif",
             "https://i.pinimg.com/originals/e6/36/47/e636479dafb6be4d4a6c23e2c52a42bf.gif",
             "https://media1.tenor.com/images/50c0ec78664fe643ce2ba898232b2282/tenor.gif",
+            "https://tenor.com/view/anime-cheeks-hugs-gif-14106856",
+            "https://tenor.com/view/anime-hug-sweet-love-gif-14246498",
+            "https://tenor.com/view/chiya-urara-meirochou-anime-saku-gif-8995974",
+            "https://tenor.com/view/anime-hug-love-gif-15900664",
+            "https://tenor.com/view/toilet-bound-hanakokun-anime-anime-hug-gif-16831471",
+            "https://tenor.com/view/haikyu-crying-volleyball-anime-bro-hug-gif-7347941",
+            "https://tenor.com/view/happy-hug-anime-gif-19371759",
+            "https://tenor.com/view/crying-anime-kyoukai-no-kanata-hug-hugging-anime-hug-tight-tight-hug-gif-17880570",
         ];
         let pick = gifs[Math.floor(Math.random() * gifs.length)];
 
@@ -23,9 +31,9 @@ module.exports = {
 
         if (args[0]) {
             let user = message.mentions.members.first();
-            embed.setTitle(`${message.author.username} hugs mentioned user!`)
+            embed.setDescription(`${message.author.username} hugs ${args[0]}!`)
         } else {
-            embed.setTitle(`${message.author.username} wants a hug!`)
+            embed.setDescription(`${message.author.username} wants a hug!`)
         }
         message.channel.send(embed);
         message.react('✅');
