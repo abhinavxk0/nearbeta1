@@ -12,10 +12,10 @@ module.exports = {
     if (args[0]){
         let user = message.mentions.members.first();
             embed.setTitle(':)')
-            embed.setDescription(`${message.author.username} hugs ${args[0]}!`)
+            embed.setDescription(`${message.author.username} kisses ${args[0]}!`)
     } else {
             embed.setTitle(':)')
-            embed.setDescription(`${message.author.username} wants a hug!`)
+            embed.setDescription(`${message.author.username} wants a kiss!`)
     }
     message.channel.send(embed);
     message.react('835016803683794986');
