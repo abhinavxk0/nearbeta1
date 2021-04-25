@@ -21,5 +21,7 @@ module.exports = {
             channelID: channel.id,
         })
         hang.start();
+    
+    message.delete()
     }
 }        
