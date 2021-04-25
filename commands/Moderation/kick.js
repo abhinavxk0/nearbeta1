@@ -3,18 +3,42 @@ module.exports = {
     category: "moderation",
     description: 'kicks ppl',
     async execute(client, command, message, args, Discord) {
+        //_________________________________________EMBEDS___________________________________________________________
+        const perm1Embed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setTitle('Error!')
+            .setDescription('> You need the `KICK_MEMBERS` permission!')
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+        
+        const perm2Embed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setTitle('Error!')
+            .setDescription('> I need the `KICK_MEMBERS` permission!')
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+
+        const kickEmbed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setTitle('Successfully kicked!')
+            .setDescription(`> ${args[0]} has been kicked from the server!`)
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+
+        const err1Embed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setTitle('Error!')
+            .setDescription("> You couldn't kick that member!")
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+        //__________________________________________________________________________________________________________
         const target = message.mentions.users.first();
 
-        if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("> You need the `KICK_MEMBERS` permission!")
-        if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send("> I do not have the `KICK_MEMBERS` permission!")
+        if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(perm1Embed)
+        if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send(perm2Embed)
 
         if (target) {
             const memberTarget = message.guild.members.cache.get(target.id);
             memberTarget.kick();
-            message.channel.send("> User has been kicked");
-            message.react('🦵')
+            message.channel.send(kickEmbed);
         } else {
-            message.channel.send(`> You coudn't kick that member!`);
+            message.channel.send(err1Embed);
         }
     }
 }
