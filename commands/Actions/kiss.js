@@ -1,10 +1,10 @@
 const emotes = require("discord-emotes");
 
 module.exports = {
-    name: 'hug',
+    name: 'kiss',
     async execute(client, command, message, args, Discord){
         
-        emotes.hug().then(gif =>{    
+        emotes.kiss().then(gif =>{    
         const embed = new Discord.MessageEmbed()
         embed.setColor('RANDOM')
         embed.setImage(gif)    

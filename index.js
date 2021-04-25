@@ -71,6 +71,11 @@ client.once('ready', () => {
 
 client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot || (!message.guild)) return;
+    if(message.mentions.members.first()){
+        if(db.has(`afk-${message.mentions.members.first().id}+${message.guild.id}`)) {
+            
+        }
+    }
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
     //commmand sorting and executing bullshit
@@ -109,4 +114,4 @@ client.on('message', async message => {
         message.reply('There was an error trying to execute that command!');
     }
 });
-client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.Y9zPKprPQbHpmKp5U2pBXrrmCoc');
+client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.3raAS-z0tj8hcwqFkpdKQbBtRQI');
