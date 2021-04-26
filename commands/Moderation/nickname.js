@@ -31,7 +31,7 @@ module.exports = {
         const err3Embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('Error!')
-            .setDescription("> I do not have permission to set " + member.toString() + "nickname!")
+            .setDescription(`> I do not have permission to set ${args[0]}'s nickname!`)
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
         //__________________________________________________________________________________________________________
         if (!message.member.hasPermission("MANAGE_NICKNAMES")) return message.channel.send(perm1Embed)
@@ -51,6 +51,5 @@ module.exports = {
             message.channel.send(err3Embed)
             console.log(err)
         }
-        message.delete()
     }
 }

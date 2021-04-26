@@ -15,7 +15,7 @@ module.exports = {
                 { name: '🙋‍♂️ Actions', value: '`hug`, `kiss`, `pat`' },
                 { name: '⚙  Moderation', value: '`ban`, `unban`, `kick`, `clear`\n`nickname`, `resetnickname`' }
             )
-            .setFooter(`${message.author.username} have a amazing day ahead!`);
+            .setFooter(`${message.author.username} have a amazing day ahead!`, message.author.displayAvatarURL({ size: 4096, dynamic: true }));
         message.channel.send(helpEmbed)
     }
 }

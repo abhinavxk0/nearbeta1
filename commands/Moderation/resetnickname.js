@@ -25,7 +25,7 @@ module.exports = {
         const err2Embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('Error!')
-            .setDescription("> I do not have permission to reset" + member.toStringe() + "nickname!")
+            .setDescription(`> I do not have permission to reset ${args[0]}'s nickname!`)
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
         //_________________________________________EMBEDS___________________________________________________________
 
@@ -41,7 +41,6 @@ module.exports = {
         } catch (err) {
             message.channel.send(err2Embed)
         }
-        message.delete()
     }
 
 }

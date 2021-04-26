@@ -1,5 +1,6 @@
 module.exports = {
 	name: 'args-info',
+	cooldown: 60,
 	description: 'Information about the arguments provided.',
 	args: true,
 	execute(client, command, message, args, Discord) {
