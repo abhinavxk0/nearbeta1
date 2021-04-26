@@ -4,6 +4,7 @@ module.exports = {
     category: "info",
     description: "help command",
     execute(client, command, message, args, Discord) {
+        message.channel.send('> Check your DMS for the list of commands!')
         const helpEmbed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('Help Command')
@@ -16,7 +17,7 @@ module.exports = {
                 { name: '⚙  Moderation', value: '`ban`, `unban`, `kick`, `clear`\n`nickname`, `resetnickname`' }
             )
             .setFooter(`${message.author.username} have a amazing day ahead!`, message.author.displayAvatarURL({ size: 4096, dynamic: true }));
-        message.channel.send(helpEmbed)
+        message.author.send(helpEmbed)
     }
 }
 
