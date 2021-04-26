@@ -1,7 +1,7 @@
 module.exports = {
     name: 'nickname',
     cooldown: 10,
-    aliases: ['nick'],
+    aliases: ['nick', 'setnick'],
     async execute(client, command, message, args, Discord) {
         //_________________________________________EMBEDS___________________________________________________________
         const perm1Embed = new Discord.MessageEmbed()
@@ -31,7 +31,7 @@ module.exports = {
         const err3Embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('Error!')
-            .setDescription("> I do not have permission to set" + member.toString() + " nickname!")
+            .setDescription("> I do not have permission to set " + member.toString() + "nickname!")
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
         //__________________________________________________________________________________________________________
         if (!message.member.hasPermission("MANAGE_NICKNAMES")) return message.channel.send(perm1Embed)
