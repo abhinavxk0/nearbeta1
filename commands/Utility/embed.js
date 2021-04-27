@@ -15,8 +15,8 @@ module.exports = {
         let description = args.slice(2).join(" ") // args.slice(2).join(" ") means we're taking all the arguments including and after the second argument. An argument is just a word or number.
         const error = new Discord.MessageEmbed()
             .setColor('RANDOM')
-            .setTitle('**❌ERROR INVALID ARGS**')
-            .setDescription('`{prefix}embed, title(one word), color(hex code or basic colors in caps; i.e(YELLOW), description(embed body))`')
+            .setTitle('Error!')
+            .setDescription('> Usage - `-embed {Title} {Color} {Description}\n> Info - Title can only contain one argument, Color has to be specified in **caps**, Description can contain more than one argument.`')
         if (!title) return message.channel.send(error) // ! means no, so if there's no title, return and send the error embed
         if (!color) return message.channel.send(error)
         if (!description) return message.channel.send(error)
