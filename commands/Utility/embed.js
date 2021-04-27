@@ -15,8 +15,9 @@ module.exports = {
         let description = args.slice(2).join(" ") // args.slice(2).join(" ") means we're taking all the arguments including and after the second argument. An argument is just a word or number.
         const error = new Discord.MessageEmbed()
             .setColor('RANDOM')
-            .setTitle('**❌ERROR INVALID ARGS**')
-            .setDescription('`{prefix}embed, title(one word), color(hex code or basic colors in caps; i.e(YELLOW), description(embed body))`')
+            .setTitle('Error!')
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+            .setDescription('`-embed {title} {color} {description}`')
 
         if (!title) return message.channel.send(error) // ! means no, so if there's no title, return and send the error embed
         if (!color) return message.channel.send(error)

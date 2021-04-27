@@ -6,19 +6,7 @@ const db = require('quick.db');
 const got = require('got');
 const DisTube = require('distube');
 const prefix = '-';
-//const npEmbed = new Discord.MessageEmbed()
-// .setColor('RANDOM')
-// .setTitle(`Now Playing: ${song.name}-${song.formattedDuration}`)
-// .setFooter(`Requested by: ${song.user}`)
 
-// const addsEmbed = new Discord.MessageEmbed()
-// .setColor('RANDOM')
-// .setTitle(`Added: ${song.name}-${song.formattedDuration}`)
-// .setFooter(`Added by: ${song.user}`)
-
-// const emptyEmbed = new Discord.MessageEmbed()
-// .setColor('RANDOM')
-// .setTitle("Voice chanel is empty, stopping playback and leaving channel.")
 client.cooldowns = new Discord.Collection();
 
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnEmpty: true, });
