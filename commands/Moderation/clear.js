@@ -11,7 +11,7 @@ module.exports = {
             .setTitle('Error!')
             .setDescription('> You need the `MANAGE_MESSAGES` permission!')
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
-        
+
         const perm2Embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('Error!')

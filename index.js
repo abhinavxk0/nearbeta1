@@ -48,8 +48,7 @@ client.once('ready', () => {
         },
         status: 'online'
     })
-        .catch(console.error);
-    // client.user.setActivity(db.get(`status`))
+    .catch(console.error);
 })
 client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot || (!message.guild)) return;

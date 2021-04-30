@@ -15,8 +15,8 @@ module.exports = {
                 .setTitle('Queue')
                 .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
                 .setDescription('> Current queue:\n' + queue.songs.map((song, id) =>
-                             `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``
-                        ).slice(0, 10).join("\n"))
+                    `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``
+                ).slice(0, 10).join("\n"))
 
         );
     }

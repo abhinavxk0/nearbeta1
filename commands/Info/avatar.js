@@ -20,7 +20,7 @@ module.exports = {
         const avatarEmbed = new Discord.MessageEmbed()
             .setTitle('Avatar')
             .setDescription(`[Avatar URL](${avatar})`)
-            .setAuthor(`${message.author.username}'s Avatar`, `${message.author.displayAvatarURL({ size: 4096, dynamic: true})}`)
+            .setAuthor(`${message.author.username}'s Avatar`, `${message.author.displayAvatarURL({ size: 4096, dynamic: true })}`)
             .setColor('RANDOM')
             .setImage(avatar);
 

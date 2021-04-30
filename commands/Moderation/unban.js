@@ -9,18 +9,18 @@ module.exports = {
             .setTitle('Error!')
             .setDescription('> You need the `BAN_NICKNAMES` permission!')
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
-        
+
         const perm2Embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('Error!')
             .setDescription('> I need the `MANAGE_NICKNAMES` permission!')
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')       
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
 
         const ubEmbed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('Successfully unbanned!')
             .setDescription(`> ${toBan} has been unbanned from the server!`)
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')   
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
         //_________________________________________EMBEDS___________________________________________________________
         let toBan = await client.users.fetch(args[0])
 

@@ -16,16 +16,15 @@ module.exports = {
                 { name: '⚙  Moderation', value: '`ban`, `unban`, `kick`, `clear`\n`nickname`, `resetnickname`' }
             )
             .setFooter(`${message.author.username} have a amazing day ahead!`, message.author.displayAvatarURL({ size: 4096, dynamic: true }));
-    try {
-        message.author.send(helpEmbed)
-        message.channel.send('> Check your DMS for the list of commands!')
-    } catch (err) {
-        message.reply('There was an error sending you a DM!')
-        message.channel.send(helpEmbed)
-        console.log(err)
-    }
+        try {
+            message.author.send(helpEmbed)
+            message.channel.send('> Check your DMS for the list of commands!')
+        } catch (err) {
+            message.reply('There was an error sending you a DM!')
+            message.channel.send(helpEmbed)
+            console.log(err)
+        }
     }
 }
 
 
-    

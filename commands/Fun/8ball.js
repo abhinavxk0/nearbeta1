@@ -2,9 +2,9 @@ const { MessageEmbed } = require('discord.js');
 
 
 module.exports = {
-    name: '8ball',
-    aliases: ['8b'],
-    async execute(client, command, message, args, Discord) {
+  name: '8ball',
+  aliases: ['8b'],
+  async execute(client, command, message, args, Discord) {
 
     if (!args[0]) return message.channel.send('Please ask a full question!');
     const replies = ['Yes.', 'No.', 'Hell naw.', 'Definitely.', 'Of course!', 'What kind of question is that?'];
