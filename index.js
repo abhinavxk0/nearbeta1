@@ -6,6 +6,7 @@ const db = require('quick.db');
 const got = require('got');
 const DisTube = require('distube');
 const prefix = '-';
+require('dotenv').config()
 client.cooldowns = new Discord.Collection();
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnEmpty: true, });
 client.distube.on("playSong", (message, queue, song) => message.channel.send(
@@ -82,4 +83,4 @@ client.on('message', async message => {
         message.reply('There was an error trying to execute that command!');
     }
 });
-client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.ize4HRtVwyWps8eLqtPTrGbuuTg');
+client.login(process.env.BOT_TOKEN);
