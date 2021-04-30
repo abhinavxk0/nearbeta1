@@ -11,7 +11,7 @@ module.exports = {
             .addFields(
                 { name: '🔧 Utility', value: '`avatar`, `mcserver`, `ping`\n`corona`, `reportbug`,`anime`, `embed`\n`updatelogs`, `invite`' },
                 { name: '🎵 Music', value: '`play`, `stop`, `skip`, `queue`\n`loop`, `resume`, `pause`, `volume`\n`shuffle`' },
-                { name: '😂 Fun', value: '`dankmeme`, `wholesomememe`, `8ball`, `hangman`' },
+                { name: '😂 Fun', value: '`dankmeme`, `wholesomememe`, `8ball`' },
                 { name: '🙋‍♂️ Actions', value: '`hug`, `kiss`, `pat`' },
                 { name: '⚙  Moderation', value: '`ban`, `unban`, `kick`, `clear`\n`nickname`, `resetnickname`' }
             )
