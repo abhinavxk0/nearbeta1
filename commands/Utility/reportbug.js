@@ -6,7 +6,7 @@ module.exports = {
         const supportEmbed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('Support Server')
-            .setURL('https://discord.gg/hsK4XZFkds')
+            .setURL('https://discord.gg/3xRBRu4Jje')
             .setDescription('Ping the owners or make a ticket to get support!')
         message.channel.send(supportEmbed)
 

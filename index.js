@@ -71,7 +71,7 @@ client.on('message', async message => {
         const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
         if (now < expirationTime) {
             const timeLeft = (expirationTime - now) / 1000;
-            return message.reply(`Please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
+            return message.channel.send(`> Chile, a little too fast here!\n Wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
         }
     }
     timestamps.set(message.author.id, now);
@@ -80,7 +80,7 @@ client.on('message', async message => {
         command.execute(client, command, message, args, Discord);
     } catch (error) {
         console.error(error);
-        message.reply('There was an error trying to execute that command!');
+        message.channel.send('`There was an error trying to execute that command!`\nDo `*reportbug` to contact developers!');
     }
 });
 client.login(process.env.BOT_TOKEN);
