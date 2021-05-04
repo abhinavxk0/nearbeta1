@@ -7,13 +7,13 @@ module.exports = {
         const perm1Embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('Error!')
-            .setDescription('> You need the `BAN_NICKNAMES` permission!')
+            .setDescription('> You need the `BAN_MEMBERS` permission!')
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
 
         const perm2Embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('Error!')
-            .setDescription('> I need the `MANAGE_NICKNAMES` permission!')
+            .setDescription('> I need the `BAN_MEMBERS` permission!')
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
 
         const ubEmbed = new Discord.MessageEmbed()
