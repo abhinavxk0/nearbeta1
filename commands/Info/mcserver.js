@@ -3,9 +3,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'mcserver',
-    category: "info",
     aliases: ["mccheck"],
-    permissions: ["SEND_MESSAGES"],
     description: 'get information about a minecraft server',
     execute(client, command, message, args, Discord) {
         if (!args[0]) return message.channel.send('> Please enter a minecraft server ip');
