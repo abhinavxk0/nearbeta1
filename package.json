@@ -13,8 +13,8 @@
     "animequote": "^1.1.1",
     "ascii-table": "0.0.9",
     "discord-emotes": "^1.5.4",
-    "discord.js": "^12.5.1",
-    "distube": "^2.8.12",
+    "discord.js": "^12.5.3",
+    "distube": "^2.8.13",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.3.0",
     "fs": "0.0.1-security",
@@ -32,6 +32,7 @@
     "reconlx": "^1.2.41",
     "request-promise-native": "^1.0.8",
     "yt-search": "^2.7.4",
-    "ytdl-core": "^4.7.0"
+    "ytdl-core": "^4.7.0",
+    "ytsr": "^3.5.0"
   }
 }

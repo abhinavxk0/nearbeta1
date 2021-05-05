@@ -1,5 +1,3 @@
-const { execute } = require("../Utility/help");
-
 module.exports = {
     name: 'volume',
     aliases: ['vol'],
