@@ -16,9 +16,9 @@ module.exports = {
 
     const embed = new MessageEmbed()
         .setTitle(video.title)
-        .setImage(video.thumbnail)
+        .setImage(video.bestThumbnail.url)
         .setColor('RED')
-        .setDescription(`**[${video.link}](${video.link})**`)
+        .setDescription(`**[${video.url}](${video.url})**`)
         .setAuthor(video.author.name)
         .addField("Views", video.views.toLocaleString(), true)
         .addField("Duration", video.duration, true)
