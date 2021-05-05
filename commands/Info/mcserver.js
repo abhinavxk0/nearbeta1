@@ -10,15 +10,14 @@ module.exports = {
         if (!args[1]) return message.channel.send('> Please enter a minecraft server port');
 
         util.status(args[0], { port: parseInt(args[1]) }).then((response) => {
-            console.log(response);
             const mcembed = new Discord.MessageEmbed()
                 .setColor('RANDOM')
                 .setAuthor('Minecraft Server', 'https://toppng.com/public/uploads/thumbnail/block-of-grass-from-the-game-minecraft-minecraft-grass-block-vector-11562868488whfdyakzjr.png')
                 .addFields(
-                    { name: '**Server IP**', value: response.host },
-                    { name: '**Online Players**', value: response.onlinePlayers },
-                    { name: '**Max Players**', value: response.maxPlayers },
-                    { name: '**Version**', value: response.version }
+                    { name: '**Server IP**', value: response.host, inline: true },
+                    { name: '**Online Players**', value: response.onlinePlayers, inline: true  },
+                    { name: '**Max Players**', value: response.maxPlayers, inline: true  },
+                    { name: '**Version**', value: response.version, inline: true  }
                 )
                 .setFooter('Have an amazing day ahead!');
 

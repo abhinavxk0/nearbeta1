@@ -16,7 +16,7 @@ module.exports = {
         const error = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('Error!')
-            .setDescription('> Usage - `-embed {Title} {Color} {Description}\n> Info - Title can only contain one argument, Color has to be specified in **caps**, Description can contain more than one argument.`')
+            .setDescription('Usage - `-embed {Title} {Color} {Description}`\nInfo - Title can only contain one argument, Color has to be specified in **caps**, Description can contain more than one argument.')
         if (!title) return message.channel.send(error) // ! means no, so if there's no title, return and send the error embed
         if (!color) return message.channel.send(error)
         if (!description) return message.channel.send(error)
