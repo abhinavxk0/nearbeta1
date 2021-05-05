@@ -20,8 +20,7 @@ module.exports = {
         .setImage(video.bestThumbnail.url)
         .setColor('#FF0000')
         .setAuthor(video.author.name)
-        .addField("Views", video.views.toLocaleString(), true)
-        .addField("Duration", video.duration, true)
+        .setFooter(`👁‍🗨  ${video.views.toLocaleString()},  ⌚  ${video.duration}`)
 
         return message.channel.send(embed)
 
