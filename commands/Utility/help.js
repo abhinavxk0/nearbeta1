@@ -17,14 +17,7 @@ module.exports = {
                 { name: '<:5727_GreenTick:839167561341992981>  Moderation', value: '`ban`, `unban`, `kick`, `clear`, `nickname`, `resetnickname`, `slowmode`', inline: true}
             )
             .setFooter(`${message.author.username} have a amazing day ahead!`, message.author.displayAvatarURL({ size: 4096, dynamic: true }));
-        try {
-            message.author.send(helpEmbed)
-            message.channel.send('> Check your DMS for the list of commands!')
-        } catch (err) {
-            message.reply('There was an error sending you a DM!')
-            message.channel.send(helpEmbed)
-            console.log(err)
-        }
+    message.channel.send(helpEmbed)
     }
 }
 
