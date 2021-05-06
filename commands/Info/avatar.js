@@ -20,7 +20,7 @@ module.exports = {
         const avatarEmbed = new Discord.MessageEmbed()
             .setTitle('Avatar')
             .setDescription(`[Avatar URL](${avatar})`)
-            .setAuthor(`${message.author.username}'s Avatar`, `${message.author.displayAvatarURL({ size: 4096, dynamic: true })}`)
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
             .setColor('RANDOM')
             .setImage(avatar);
 
