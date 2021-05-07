@@ -7,6 +7,7 @@ module.exports = {
 
         if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(perm1Embed)
         if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send(perm2Embed)
+        if(!toBan.hasPermission("ADMINISTRATOR")) return message.channel.send(perm3Embed)
         
         const perm1Embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
@@ -18,6 +19,12 @@ module.exports = {
             .setColor('RANDOM')
             .setTitle('Error!')
             .setDescription('> I need the `BAN_MEMBERS` permission!')
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+
+        const perm3Embed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setTitle('Error!')
+            .setDescription('> The target is an **ADMIN**!')
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
 
 

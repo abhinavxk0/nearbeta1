@@ -6,6 +6,7 @@ module.exports = {
     name: 'youtube',
     async execute(client, command, message, args, Discord){
         const query = args.join(" ");
+        
         if (!query) return message.channel.send("Please provide a search query!");
 
         const res = await ytsr(query).catch(e => {
