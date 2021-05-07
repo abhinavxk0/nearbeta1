@@ -4,9 +4,10 @@ module.exports = {
     description: 'kicks ppl',
     async execute(client, command, message, args, Discord) {
         const target = message.mentions.users.first();
+        if (!target.hasPermission("ADMINISTRATOR")) return message.channel.send(perm3Embed)
         if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(perm1Embed)
         if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send(perm2Embed)
-        if (!target.hasPermission("ADMINISTRATOR")) return message.channel.send(perm3Embed)
+
         //_________________________________________EMBEDS___________________________________________________________
         const perm1Embed = new Discord.MessageEmbed()
             .setColor('RANDOM')

@@ -4,10 +4,11 @@ module.exports = {
     description: "bans a user",
     execute(client, command, message, args, Discord) {
         let toBan = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || x.user.username === args(0));
-
+        
+        if(!toBan.hasPermission("ADMINISTRATOR")) return message.channel.send(perm3Embed)
         if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(perm1Embed)
         if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send(perm2Embed)
-        if(!toBan.hasPermission("ADMINISTRATOR")) return message.channel.send(perm3Embed)
+
         
         const perm1Embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
