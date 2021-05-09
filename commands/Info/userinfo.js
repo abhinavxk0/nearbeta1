@@ -10,7 +10,7 @@ module.exports = {
         const member = guild.members.cache.get(user.id)
     
         const embed = new MessageEmbed()
-          .setAuthor(`User info for ${user.username}`, user.displayAvatarURL())
+          .setAuthor(`User info for ${user.username}`, user.displayAvatarURL({ size: 4096, dynamic: true }))
           .setColor('#7fffd4')
           .addFields(
             {

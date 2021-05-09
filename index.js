@@ -14,14 +14,52 @@ client.distube.on("playSong", (message, queue, song) => message.channel.send(
         .setColor('#b0e0e6')
         .setTitle(`Now Playing`)
         .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
-        .setDescription(`**Playing:** ${song.name} - ${song.formattedDuration}\n**Requested by:** ${song.user}`)
+        .setDescription(`${song.name} - ${song.formattedDuration}`)
+        .setThumbnail(song.thumbnail)
+        .addFields(
+            {
+                name: 'Likes',
+                value: song.likes,
+                inline: true,
+            },
+            {
+                name: 'Dislikes',
+                value: song.dislikes,
+                inline: true,
+            },
+            {
+                name: 'Views',
+                value: song.views,
+                inline: true,
+            },
+        )
+        .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
 ))
 client.distube.on("addSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#e6b0e0')
         .setTitle(`Added`)
         .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
-        .setDescription(`**Added:** ${song.name} - ${song.formattedDuration}\n**Added by:** ${song.user}`)
+        .setDescription(`${song.name} - ${song.formattedDuration}`)
+        .setThumbnail(song.thumbnail)
+        .addFields(
+            {
+                name: 'Likes',
+                value: song.likes,
+                inline: true,
+            },
+            {
+                name: 'Dislikes',
+                value: song.dislikes,
+                inline: true,
+            },
+            {
+                name: 'Views',
+                value: song.views,
+                inline: true,
+            },
+        )
+        .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
 ))
 client.distube.on("empty", message => message.channel.send(
     new Discord.MessageEmbed()
