@@ -6,6 +6,7 @@ module.exports = {
     category: "music",
     description: 'shows song queue',
     async execute(client, command, message, args, Discord) {
+
         if (!message.member.voice.channel) return message.channel.send(
             new Discord.MessageEmbed()
                 .setColor('RANDOM')
@@ -21,9 +22,9 @@ module.exports = {
                 .setTitle('Queue')
                 .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
                 .setDescription('> Current queue:\n' + queue.songs.map((song, id) =>
-                    `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``
+                    `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\`` + `\n\n> Volume : ${queue.volume}\n> Currently Playing: ${song.name} - ${queue.formattedCurrentTime}`
                 ).slice(0, 10).join("\n"))
 
         );
     }
-}
+}   
