@@ -118,7 +118,7 @@ client.on('message', async message => {
         command.execute(client, command, message, args, Discord);
     } catch (error) {
         console.error(error);
-        message.channel.send('`There was an error trying to execute that command!`\nDo `*reportbug` to contact developers!');
+        message.channel.send('There was an error trying to execute that command!\nDo `*reportbug` to contact developers!');
     }
 });
 client.login(process.env.BOT_TOKEN);

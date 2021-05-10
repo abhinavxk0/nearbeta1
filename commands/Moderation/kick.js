@@ -3,58 +3,52 @@ module.exports = {
     category: "moderation",
     description: 'kicks ppl',
     async execute(client, command, message, args, Discord) {
-        const target = message.mentions.users.first();
-        const perm3Embed = new Discord.MessageEmbed()
-        .setColor('RANDOM')
-        .setTitle('Error!')
-        .setDescription('> The target is not kickable!')
-        .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')  
-        if(!target.kickable) return message.reply(perm3Embed);
-        if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(perm1Embed)
-        if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send(perm2Embed)
-
-        const perm4Embed = new Discord.MessageEmbed()
-        .setColor('RANDOM')
-        .setTitle('Error!')
-        .setDescription('> The target is higher than you in the roles hierarchy!')
-        .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
-    if (!message.member.roles.highest.position < target.roles.highest.position) return message.reply(perm4Embed)
-
-        //_________________________________________EMBEDS___________________________________________________________
-        const perm1Embed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setTitle('Error!')
-            .setDescription('> You need the `KICK_MEMBERS` permission!')
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
-
-        const perm2Embed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setTitle('Error!')
-            .setDescription('> I need the `KICK_MEMBERS` permission!')
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
-
-      
-
-        const kickEmbed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setTitle('Successfully kicked!')
-            .setDescription(`> ${args[0]} has been kicked from the server!`)
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
-
-        const err1Embed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setTitle('Error!')
-            .setDescription("> You couldn't kick that member!")
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
-        //__________________________________________________________________________________________________________
-
-
+        const target = message.mentions.users.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || x.user.username === args(0));
+        if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('RANDOM')
+                .setTitle('Error!')
+                .setDescription('> You need the `KICK_MEMBERS` permission!')
+                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+        )
+        if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('RANDOM')
+                .setTitle('Error!')
+                .setDescription('> I need the `KICK_MEMBERS` permission!')
+                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+        )
+        if (target.kickable) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('RANDOM')
+                .setTitle('Error!')
+                .setDescription('> The target is not kickable!')
+                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+        );
+        if (!message.member.roles.highest < target.highest) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('RANDOM')
+                .setTitle('Error!')
+                .setDescription('> The target is higher than you in the roles hierarchy!')
+                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg'))
         if (target) {
             const memberTarget = message.guild.members.cache.get(target.id);
             memberTarget.kick();
-            message.channel.send(kickEmbed);
+            message.channel.send(
+                new Discord.MessageEmbed()
+                    .setColor('RANDOM')
+                    .setTitle('Successfully kicked!')
+                    .setDescription(`> ${target} has been kicked from the server!`)
+                    .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+            );
         } else {
-            message.channel.send(err1Embed);
+            message.channel.send(
+                new Discord.MessageEmbed()
+                    .setColor('RANDOM')
+                    .setTitle('Error!')
+                    .setDescription("> You couldn't kick that member!")
+                    .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+            );
         }
     }
 }
