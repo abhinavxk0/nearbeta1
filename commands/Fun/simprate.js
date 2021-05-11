@@ -4,6 +4,7 @@ module.exports = {
     description: 'simp lol',
     execute(client, command, message, args, Discord){
         const simp = Math.floor(Math.random() * 100) + 1  
+        const color = ['#ee0000', '#00ff00']
 
         let user;
         if (message.mentions.users.first()) {
@@ -17,7 +18,7 @@ module.exports = {
             new Discord.MessageEmbed()
             .setTitle(`Simp Calculator`)
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
-            .setColor(message.member.displayHexColor)
+            .setColor('#2f3136')
             .setDescription(`${user} is ${simp}% simp!`)
         )
     }

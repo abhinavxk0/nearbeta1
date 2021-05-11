@@ -6,7 +6,7 @@ module.exports = {
 
         message.channel.send(
             new Discord.MessageEmbed()
-                .setTitle(`Here's your color! - ${randomcolor}`)
+                .setTitle(`Here's your color! - ${randomColor}`)
                 .setColor(randomColor)
                 .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
         )
