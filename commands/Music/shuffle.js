@@ -1,6 +1,5 @@
 module.exports = {
     name: 'shuffle',
-    aliases: [''],
     async execute(client, command, message, args, Discord) {
         if (!message.member.voice.channel) return message.channel.send(
             new Discord.MessageEmbed()

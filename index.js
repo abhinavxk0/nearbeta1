@@ -87,7 +87,7 @@ client.once('ready', () => {
         },
         status: 'online'
     })
-    .catch(console.error);
+        .catch(console.error);
 })
 client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot || (!message.guild)) return;
