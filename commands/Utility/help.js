@@ -15,7 +15,6 @@ module.exports = {
                 { name: '<:5727_GreenTick:839167561341992981> Fun', value: '`dankmeme`, `wholesomememe`, `8ball`', inline: true},
                 { name: '<:5727_GreenTick:839167561341992981> Actions', value: '`hug`, `kiss`, `pat`', inline: true},
                 { name: '<:5727_GreenTick:839167561341992981>  Moderation', value: '`ban`, `unban`, `kick`, `clear`, `nickname`, `resetnickname`', inline: true},
-                { name: '<:RedTick:839690444320276532>  In Development', value: '`spotify`, `slowmode`', inline: true}
             )
             .setFooter(`${message.author.username} have an amazing day ahead!`, message.author.displayAvatarURL({ size: 4096, dynamic: true }));
     message.channel.send(helpEmbed)
