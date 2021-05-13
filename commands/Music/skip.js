@@ -16,7 +16,7 @@ module.exports = {
         
         if (!message.member.roles.cache.some(role => role.name === 'DJ')) return message.channel.send(
             new Discord.MessageEmbed()
-            .setColor('RANDOM')
+            .setColor('#d81b60')
             .setTitle('Error!')
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')    
             .setDescription('> You need the `DJ` role to skip songs!\n To skip songs make a role named `DJ`!')        

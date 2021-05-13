@@ -5,7 +5,7 @@ module.exports = {
     description: "help command",
     execute(client, command, message, args, Discord) {
         const helpEmbed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
+            .setColor('#d81b60')
             .setTitle('Help Command')
             .setThumbnail('https://cdn.discordapp.com/attachments/822106850258321440/822432415364546580/nearrrfulll.jpg')
             .addFields(

@@ -1,37 +1,44 @@
-const Discord = require('discord.js');
-
 module.exports = {
     name: 'clear',
     aliases: ['purge', 'delete'],
     description: "Clears messages!",
     async execute(client, command, message, args, Discord) {
+        if(!args.length) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#d81b60')
+                .setTitle('Clear Command')
+                .setDescription(
+                    `**Description:** Clears messages.\n**Usage:** -clear [amount]\n**Example:** -clear 50`
+                )
+                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+        )
         //_________________________________________EMBEDS___________________________________________________________
         const perm1Embed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
+            .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription('> You need the `MANAGE_MESSAGES` permission!')
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
 
         const perm2Embed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
+            .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription('> I need the `MANAGE_MESSAGES` permission!')
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
 
         const err1Embed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
+            .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription(`> Please enter the amount of messages to be cleared!`)
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
 
         const err2Embed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
+            .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription(`> The argument has to be a number!`)
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
 
         const err3Embed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
+            .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription(`> The argument has to be a number between 1 and 100!`)
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')

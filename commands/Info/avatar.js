@@ -21,7 +21,7 @@ module.exports = {
             .setTitle('Avatar')
             .setDescription(`[Avatar URL](${avatar})`)
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
-            .setColor('RANDOM')
+            .setColor('#d81b60')
             .setImage(avatar);
 
         return message.channel.send(avatarEmbed);

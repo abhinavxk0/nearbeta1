@@ -6,7 +6,7 @@ module.exports = {
 
         emotes.hug().then(gif => {
             const embed = new Discord.MessageEmbed()
-            embed.setColor('RANDOM')
+            embed.setColor('#d81b60')
             embed.setImage(gif)
 
             if (args[0]) {

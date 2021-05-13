@@ -6,8 +6,8 @@ module.exports = {
     execute(client, command, message, args, Discord) {
         message.channel.send(
             new Discord.MessageEmbed()
-                .setColor('RANDOM')
-                .setAuthor(`🏓  Pong! ${client.ws.ping}ms`))
+                .setColor('#d81b60')
+                .setAuthor(`🏓  Pong! ${client.ws.ping}ms`));
 
     }
-}
+};

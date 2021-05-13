@@ -6,7 +6,7 @@ module.exports = {
     async execute(client, command, message, args, Discord) {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(
             new Discord.MessageEmbed()
-                .setColor('RANDOM')
+                .setColor('#d81b60')
                 .setTitle(`Error!`)
                 .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
                 .setDescription("You need `MANAGE_MESSAGES` permission!"))
@@ -14,7 +14,7 @@ module.exports = {
         let color = args[1]
         let description = args.slice(2).join(" ") // args.slice(2).join(" ") means we're taking all the arguments including and after the second argument. An argument is just a word or number.
         const error = new Discord.MessageEmbed()
-            .setColor('RANDOM')
+            .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription('Usage - `-embed {Title} {Color} {Description}`\nInfo - Title can only contain one argument, Color has to be specified in **caps**, Description can contain more than one argument.')
         if (!title) return message.channel.send(error) // ! means no, so if there's no title, return and send the error embed

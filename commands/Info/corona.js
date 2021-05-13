@@ -16,7 +16,7 @@ module.exports = {
 
             const coronaembed = new Discord.MessageEmbed()
                 .setTitle("Global Cases")
-                .setColor("RANDOM")
+                .setColor("#d81b60")
                 .setDescription("Sometimes cases number may differ from small amount.")
                 .addField("Total Cases", corona.cases, true)
                 .addField("Total Deaths", corona.deaths, true)
@@ -34,7 +34,7 @@ module.exports = {
 
             const poopembed = new Discord.MessageEmbed()
                 .setTitle(`${corona.country}`)
-                .setColor("RANDOM")
+                .setColor("#d81b60")
                 .setDescription("Sometimes cases number may differ from small amount.")
                 .addField("Total Cases", corona.cases, true)
                 .addField("Total Deaths", corona.deaths, true)

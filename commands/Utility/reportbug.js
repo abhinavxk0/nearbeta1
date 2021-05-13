@@ -4,7 +4,7 @@ module.exports = {
     description: "report bug",
     execute(client, command, message, args, Discord) {
         const supportEmbed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
+            .setColor('#d81b60')
             .setTitle('Support Server')
             .setURL('https://discord.gg/3xRBRu4Jje')
             .setDescription('Ping the owners or make a ticket to get support!')

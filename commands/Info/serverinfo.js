@@ -9,6 +9,7 @@ module.exports = {
     let embed = new Discord.MessageEmbed()
       .setTitle(`Server info for "${name}"`)
       .setThumbnail(icon)
+      .setColor('#d81b60')
       .addFields(
         {
           name: 'Region',
