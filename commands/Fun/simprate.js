@@ -4,7 +4,6 @@ module.exports = {
     description: 'simp lol',
     execute(client, command, message, args, Discord){
         const simp = Math.floor(Math.random() * 100) + 1  
-        const color = ['#ee0000', '#00ff00']
 
         let user;
         if (message.mentions.users.first()) {
