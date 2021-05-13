@@ -5,6 +5,9 @@ module.exports = {
     aliases: ['repeat'],
     description: 'loops song',
     async execute(client, command, message, args, Discord) {
+        let mode = client.distube.setRepeatMode(message, parseInt(args[0]));
+        mode = mode ? mode == 2 ? "Repeat queue" : "Repeat song" : "Off";
+        
         if (!message.member.voice.channel) return message.channel.send(
             new Discord.MessageEmbed()
                 .setColor('#2f3136')
@@ -13,9 +16,6 @@ module.exports = {
                 .setDescription('> You need to be in a voice channel to execute this command!')
         )
         "Set repeat mode to `" + mode + "`"
-        let mode = client.distube.setRepeatMode(message, parseInt(args[0]));
-        mode = mode ? mode == 2 ? "Repeat queue" : "Repeat song" : "Off";
-
         message.channel.send(
             new Discord.MessageEmbed()
             .setTitle('Repeat Mode')
