@@ -14,32 +14,32 @@ module.exports = {
           .setColor('#d81b60')
           .addFields(
             {
-              name: '<:5727_GreenTick:839167561341992981>  User tag',
+              name: 'User tag',
               value: user.tag,
               inline: true 
             },
             {
-              name: '<:5727_GreenTick:839167561341992981>  Is bot',
-              value: user.bot,
+              name: 'Is bot',
+              value: user.bot || 'Not a bot',
               inline: true 
             },
             {
-              name: '<:5727_GreenTick:839167561341992981>  Nickname',
+              name: 'Nickname',
               value: member.nickname || 'None',
               inline: true 
             },
             {
-              name: '<:5727_GreenTick:839167561341992981>  Joined Server',
+              name: 'Joined Server',
               value: new Date(member.joinedTimestamp).toLocaleDateString(),
               inline: true 
             },
             {
-              name: '<:5727_GreenTick:839167561341992981>  Joined Discord',
+              name: 'Joined Discord',
               value: new Date(user.createdTimestamp).toLocaleDateString(),
               inline: true 
             },
             {
-              name: '<:5727_GreenTick:839167561341992981>  Roles',
+              name: 'Roles',
               value: member.roles.cache.size - 1,
               inline: true 
             }
