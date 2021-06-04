@@ -12,7 +12,7 @@ module.exports = {
 
         client.distube.resume(message);
 
-        message.react('⏯');
+        message.react('<:pauseplay:850345851523039252>');
 
     }
 }

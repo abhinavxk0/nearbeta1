@@ -23,5 +23,6 @@ module.exports = {
         )
         
         client.distube.skip(message)
+        message.react("<:skip:850343858759270471>")
     }
 }
