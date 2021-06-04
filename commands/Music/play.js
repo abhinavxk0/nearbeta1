@@ -16,7 +16,7 @@ module.exports = {
         const music = args.join(" ");
 
         client.distube.play(message, music)
-        message.react('▶');
+        message.react('<:play:850292211248529408>');
     }
 }
 
