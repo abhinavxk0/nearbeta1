@@ -10,7 +10,7 @@ module.exports = {
                 .setDescription(
                     `**Description:** Sets a members's nickname.\n**Usage:** -nickname [user] (nickname)\n**Example:** -nickname @Xavier Noob`
                 )
-                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
         )
 
         if (!message.member.hasPermission("MANAGE_NICKNAMES")) return message.channel.send(
@@ -18,14 +18,14 @@ module.exports = {
             .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription('> You need the `MANAGE_NICKNAMES` permission!')
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
         )
         if (!message.guild.me.hasPermission("MANAGE_NICKNAMES")) return message.channel.send(
             new Discord.MessageEmbed()
             .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription('> I need the `MANAGE_NICKNAMES` permission!')
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
         )
 
         const member = message.mentions.members.first() || message.member;
@@ -35,7 +35,7 @@ module.exports = {
             .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription(`> Please specify a user!`)
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
         );
 
         const arguments = args.slice(1).join(" ");
@@ -48,7 +48,7 @@ module.exports = {
             .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription(`> I do not have permission to set ${args[0]}'s nickname!` + err)
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
             )
             console.log(err)
         }

@@ -7,7 +7,7 @@ module.exports = {
         const helpEmbed = new Discord.MessageEmbed()
             .setColor('#d81b60')
             .setTitle('Help Command')
-            .setThumbnail('https://cdn.discordapp.com/attachments/822106850258321440/822432415364546580/nearrrfulll.jpg')
+            .setThumbnail('https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
             .addFields(
                 { name: '<:5727_GreenTick:839167561341992981> Utility', value: '`ping`, `reportbug`, `embed`, `updatelogs`, `invite`', inline: true},
                 { name: '<:5727_GreenTick:839167561341992981> Info', value: '`anime`, `avatar`, `corona / covid`, `mcserver`\n`userinfo / whois`, `youtube`, `servericon`', inline: true},

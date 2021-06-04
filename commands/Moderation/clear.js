@@ -10,38 +10,38 @@ module.exports = {
                 .setDescription(
                     `**Description:** Clears messages.\n**Usage:** -clear [amount]\n**Example:** -clear 50`
                 )
-                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
         )
         //_________________________________________EMBEDS___________________________________________________________
         const perm1Embed = new Discord.MessageEmbed()
             .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription('> You need the `MANAGE_MESSAGES` permission!')
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
 
         const perm2Embed = new Discord.MessageEmbed()
             .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription('> I need the `MANAGE_MESSAGES` permission!')
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
 
         const err1Embed = new Discord.MessageEmbed()
             .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription(`> Please enter the amount of messages to be cleared!`)
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
 
         const err2Embed = new Discord.MessageEmbed()
             .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription(`> The argument has to be a number!`)
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
 
         const err3Embed = new Discord.MessageEmbed()
             .setColor('#d81b60')
             .setTitle('Error!')
             .setDescription(`> The argument has to be a number between 1 and 100!`)
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
 
         //__________________________________________________________________________________________________________
 

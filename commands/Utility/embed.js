@@ -8,7 +8,7 @@ module.exports = {
             new Discord.MessageEmbed()
                 .setColor('#d81b60')
                 .setTitle(`Error!`)
-                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
                 .setDescription("You need `MANAGE_MESSAGES` permission!"))
         let title = args[0] // args[0] is the first word or number after the command name
         let color = args[1]

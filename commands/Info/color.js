@@ -8,7 +8,7 @@ module.exports = {
             new Discord.MessageEmbed()
                 .setTitle(`Here's your color! - ${randomColor}`)
                 .setColor(randomColor)
-                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/attachments/530277667119824917/834815044381966457/nearbot.jpg')
+                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
         )
     }
 }
