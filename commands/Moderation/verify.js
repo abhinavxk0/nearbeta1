@@ -4,8 +4,6 @@ module.exports = {
 
         if (message.guild.id !== '768453184464748634') return message.reply('This command can only be used in another server.');
 
-        if(!args.length) return message.channel.send('This command, verifies a user!')
-
         let user = message.author
 
 
