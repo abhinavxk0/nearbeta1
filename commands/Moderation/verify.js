@@ -22,6 +22,7 @@ module.exports = {
         message.channel.send(
             new Discord.MessageEmbed()
             .setDescription('You have been verified!')
+            .setColor('#00FFFF')
         )
         
     }
