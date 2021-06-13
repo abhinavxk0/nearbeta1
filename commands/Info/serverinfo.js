@@ -57,7 +57,6 @@ module.exports = {
           inline: true,
         },
       )
-      .setImage(banner)
 
     message.channel.send(embed)
     }
