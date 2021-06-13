@@ -3,7 +3,7 @@ module.exports = {
     async execute(client, command, message, args, Discord){
         const { guild } = message
 
-        const { name, region, memberCount, owner, afkTimeout, rulesChannel, premiumSubscriptionCount, premiumTier, id } = guild
+        const { name, region, memberCount, owner, afkTimeout, rulesChannel, premiumSubscriptionCount, premiumTier, id, banner } = guild
         const icon = guild.iconURL()
 
     let embed = new Discord.MessageEmbed()
@@ -57,6 +57,7 @@ module.exports = {
           inline: true,
         },
       )
+      .setImage(banner)
 
     message.channel.send(embed)
     }
