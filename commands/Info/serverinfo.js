@@ -48,12 +48,12 @@ module.exports = {
         },
         {
           name: 'Boosts',
-          value: premiumSubscriptionCount + 'Boosts' || '<:RedTick:839690444320276532> None',
+          value: premiumSubscriptionCount + ' Boosts' || '<:RedTick:839690444320276532> None',
           inline: true,
         },
         {
           name: 'Boost Level',
-          value: 'Level' + premiumTier || '<:RedTick:839690444320276532> None',
+          value: 'Level ' + premiumTier || '<:RedTick:839690444320276532> None',
           inline: true,
         },
       )
