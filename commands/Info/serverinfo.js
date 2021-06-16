@@ -4,7 +4,7 @@ module.exports = {
         const { guild } = message
 
         const { name, region, memberCount, owner, afkTimeout, rulesChannel, premiumSubscriptionCount, premiumTier, id, banner } = guild
-        const icon = guild.iconURL()
+        const icon = guild.iconURL({ size: 4096, dynamic: true })
 
     let embed = new Discord.MessageEmbed()
       .setTitle('Server Info')
