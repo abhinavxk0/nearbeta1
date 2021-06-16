@@ -38,7 +38,7 @@ module.exports = {
         },
         {
           name: 'AFK Timeout',
-          value: afkTimeout / 60 || '<:RedTick:839690444320276532> None',
+          value: afkTimeout / 60 + 'minutes'|| '<:RedTick:839690444320276532> None',
           inline: true,
         },
         {
@@ -48,12 +48,12 @@ module.exports = {
         },
         {
           name: 'Boosts',
-          value: premiumSubscriptionCount || '<:RedTick:839690444320276532> None',
+          value: premiumSubscriptionCount + 'Boosts' || '<:RedTick:839690444320276532> None',
           inline: true,
         },
         {
           name: 'Boost Level',
-          value: premiumTier || '<:RedTick:839690444320276532> None',
+          value: 'Level' + premiumTier || '<:RedTick:839690444320276532> None',
           inline: true,
         },
       )
