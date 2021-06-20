@@ -1,65 +1,41 @@
-// module.exports = {
-//     name: 'ban',
-//     description: "bans a user",
-//     async execute(client, command, message, args, Discord) {
+module.exports = {
+    name: 'ban',
+    async execute(client, command, message, args, Discord){
+        if(!args.length) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#81de0a')
+                .setDescription('Mention a user to ban.')
+        )
 
-//         let toBan = await message.mentions.members.first() && message.guild.members.cache.get(args[0]) && client.users.fetch(args[0])
-//         const reason = args.slice(1).join(" ") && "There was no reason!";
+        const target = await message.mentions.users.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || x.user.username === args[0]) || client.users.fetch(args[0]) 
+        const reason = args.slice(1).join(" ") || "There was no reason!"; 
 
-//         if(!args.length) return message.channel.send(
-//             new Discord.MessageEmbed()
-//                 .setColor('#d81b60')
-//                 .setTitle('Ban Command')
-//                 .setDescription(
-//                     `**Description:** Bans a member.\n**Usage:** -ban [user] (reason)\n**Example:** -ban @Xavier Get out!`
-//                 )
-//                 .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
-//         )
-
-//         if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(
-//             new Discord.MessageEmbed()
-//                 .setColor('#d81b60')
-//                 .setTitle('Error!')
-//                 .setDescription('> You need the `BAN_MEMBERS` permission!')
-//                 .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
-//         )
-//         if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send(
-//             new Discord.MessageEmbed()
-//                 .setColor('#d81b60')
-//                 .setTitle('Error!')
-//                 .setDescription('> I need the `BAN_MEMBERS` permission!')
-//                 .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096'))
-//         // if (!toBan.bannable) return message.channel.send(
-//         //     new Discord.MessageEmbed()
-//         //         .setColor('#d81b60')
-//         //         .setTitle('Error!')
-//         //         .setDescription('> The target is not bannable!')
-//         //         .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
-//         // )
-//         if (!message.member.roles.highest < toBan.highest) return message.reply(
-//             new Discord.MessageEmbed()
-//                 .setColor('#d81b60')
-//                 .setTitle('Error!')
-//                 .setDescription('> The target is higher than you in the roles hierarchy!')
-//                 .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
-//         )
-
-//         try {
-//             toBan.ban({
-//                 reason: reason
-//             })
-//             message.channel.send(
-//                 new Discord.MessageEmbed()
-//                     .setColor('#d81b60')
-//                     .setTitle('Successfully banned!')
-//                     .setDescription(`> ${toBan} has been banned from the server!\n**Reason**: ${reason}`)
-//                     .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
-//             )
-//         } catch (error) {
-//             message.reply(error)
-//         }
+        if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#81de0a')
+                .setDescription('You dont have the ban members permission!')
+        )
+        if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#81de0a')
+                .setDescription('I dont have the ban members permission!')
+        )
+        if (target.id === client.user.id) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#81de0a')
+                .setDescription('You cant ban me!')
+        )
 
 
-//     }
-// }
 
+        if (target) {
+            const memberTarget = message.guild.members.cache.get(target.id)
+            memberTarget.ban({reason})
+            message.channel.send(`${target} has been successfully eliminated`)
+        } else {
+            message.channel.send('`you couldnt eliminate that target mission failed`')
+        }
+
+        
+    }
+}

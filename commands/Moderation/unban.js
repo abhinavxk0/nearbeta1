@@ -1,7 +1,5 @@
 module.exports = {
     name: 'unban',
-    category: "moderation",
-    description: 'Unbans user!',
     async execute(client, command, message, args, Discord) {
         if(!args.length) return message.channel.send(
             new Discord.MessageEmbed()
@@ -31,14 +29,18 @@ module.exports = {
             .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
         )
 
-        message.guild.members.unban(toBan, reason)
-
-        message.channel.send(
-            new Discord.MessageEmbed()
-            .setColor('#d81b60')
-            .setTitle('Successfully unbanned!')
-            .setDescription(`> ${toBan} has been unbanned from the server!`)
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
-        )
+        try {
+            message.guild.members.unban(toBan, reason)
+            message.channel.send(
+                new Discord.MessageEmbed()
+                .setColor('#d81b60')
+                .setTitle('Successfully unbanned!')
+                .setDescription(`> ${toBan} has been unbanned from the server!`)
+                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
+        )} catch (err){
+            console.log(err)
+        }
+        
+        
     }
 }

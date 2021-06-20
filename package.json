@@ -16,6 +16,7 @@
     "discord.js": "^12.5.3",
     "distube": "^2.8.15",
     "dotenv": "^8.6.0",
+    "eris": "^0.15.1",
     "ffmpeg-static": "^4.3.0",
     "fs": "0.0.1-security",
     "genius-lyrics": "^4.2.9",
