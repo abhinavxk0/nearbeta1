@@ -4,31 +4,50 @@ module.exports = {
     name: 'hackban',
     async execute(client, command, message, args, Discord){
         
-        if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('You do not have the permission \`BAN_MEMBERS\`')
-        if(!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('I do not have the permission \`BAN_MEMBERS\`')
+        if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#defafe')
+                .setDescription(`You don't have the \`BAN_MEMBERS\` permission!`)
+        )
+        if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#defafe')
+                .setDescription(`I don't have the \`BAN_MEMBERS\` permission.`)
+        )
 
         let userID = args[0]
-        let reason = args.slice(1).join(' ') || 'No reason specified.'
+        let reason = args.slice(1).join(' ') || 'No specified reason.'
 
-        if(!userID) return message.reply('Please specify a user ID to ban.')
-        if(isNaN(userID)) return message.reply('The user ID must be a number.')
-
-        if(userID === message.author.id) return message.reply('You cannot ban yourself ;-;')
-        if(userID == client.user.id) return message.reply('This is not cool, you cannot ban me with my own command.')
+        if(isNaN(userID)) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#defafe')
+                .setDescription('The user ID should be number.')
+        )
+        if(userID === message.author.id) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#defafe')
+                .setDescription("You can't ban yourself.")
+        )
+        if (userID === client.user.id) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#defafe')
+                .setDescription(`You can't ban me.`)
+        )
 
         client.users.fetch(userID).then(async(user) => {
             await message.guild.members.ban(user.id, {reason: reason})
-            const bannedEmbed = new MessageEmbed()
-            .setColor('#d81b60')
-            .setTitle('Hackban successful!')
-            .setDescription(`<@${user.id}> was hack-banned by ${message.author}\n${reason}`)
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
-            .setFooter('Hackbanning is basically banning a person who is not in the server you want to ban them from. It does not involve hacking.')
-            message.channel.send(bannedEmbed)
+            message.channel.send(new Discord.MessageEmbed()
+            .setColor('#defafe')
+            .setDescription(`<@${user.id}> was banned.\n${reason}`))
             
         }).catch(err => {
-            return message.reply(`There has been an error: **${err}**`)
-        }) 
-        
+            console.log(err)
+            return message.channel.send(
+                new Discord.MessageEmbed()
+                .setColor('#defafe')
+                .setDescription(`There was an error performing this task.`)
+            )
+        }
+        ) 
     }
 }
