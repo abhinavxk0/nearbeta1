@@ -121,4 +121,4 @@ client.on('message', async message => {
         message.channel.send('There was an error trying to execute that command!\nDo `*reportbug` to contact developers!');
     }
 });
-client.login(process.env.BOT_TOKEN);
+client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.5ezvaKICya9aSHOJW7t7c9yOSHU');
