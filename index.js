@@ -5,7 +5,7 @@ const fs = require('fs');
 const db = require('quick.db');
 const got = require('got');
 const DisTube = require('distube');
-const prefix = '-';
+const prefix = 'n!';
 require('dotenv').config()
 client.cooldowns = new Discord.Collection();
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnEmpty: true, });
@@ -82,7 +82,7 @@ client.once('ready', () => {
     console.log('NearBeta is online.')
     client.user.setPresence({
         activity: {
-            name: '-help || -ping',
+            name: 'n!help || n!ping',
             type: "LISTENING"
         },
         status: 'online'
