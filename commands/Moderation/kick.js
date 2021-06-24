@@ -21,6 +21,16 @@ module.exports = {
                 .setColor('#9a0000')
                 .setDescription("The target is not kick-abale.")
         );
+        if (target.id === client.user.id) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#9a0000')
+                .setDescription(`You can't ban me.`)
+        )
+        if(target.id === message.author.id) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#9a0000')
+                .setDescription("You can't ban yourself.")
+        )
 
         if (target) {
             const memberTarget = message.guild.members.cache.get(target.id);
