@@ -2,6 +2,9 @@ module.exports = {
     name: 'verify',
     async execute(client, command, message, args, Discord){
 
+        const { name } = guild
+        const icon = guild.iconURL({ size: 4096, dynamic: true })
+
         if (message.guild.id !== '768453184464748634') return message.reply('This command can only be used in another server.');
 
         let role = message.member.guild.roles.cache.find(role => role.name === "⭒₊˚・Members");
@@ -23,6 +26,7 @@ module.exports = {
             new Discord.MessageEmbed()
             .setDescription('You have been verified!')
             .setColor('#00FFFF')
+            .setFooter(name, icon)
         )
         
     }

@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: 'hackban',
+    cooldown: 10,
     async execute(client, command, message, args, Discord){
         
         if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(
@@ -38,13 +39,13 @@ module.exports = {
             await message.guild.members.ban(user.id, {reason: reason})
             message.channel.send(new Discord.MessageEmbed()
             .setColor('#defafe')
-            .setDescription(`<@${user.id}> was banned.\n${reason}`))
+            .setDescription(`<@${user.id}> was banned.\nReason: ${reason}`))
             
         }).catch(err => {
             console.log(err)
             return message.channel.send(
                 new Discord.MessageEmbed()
-                .setColor('#defafe')
+                .setColor('#9a0000')
                 .setDescription(`There was an error performing this task.`)
             )
         }
