@@ -15,7 +15,7 @@ module.exports = {
     if (message.channel.permissionsFor(message.guild.me).has('EMBED_LINKS')) {
       const embed = new MessageEmbed() // create embed 
         .setAuthor('🎱 The 8 Ball says...')
-        .setColor('#d81b60')
+        .setColor('#defafe')
         .addField('Question:', question)
         .addField('Answer:', replies[result])
         .setFooter(`Asked by ${message.author.username}`);

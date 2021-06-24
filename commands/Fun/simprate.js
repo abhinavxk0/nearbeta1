@@ -16,8 +16,8 @@ module.exports = {
         return message.channel.send(
             new Discord.MessageEmbed()
             .setTitle(`Simp Calculator`)
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
-            .setColor('#d81b60')
+            
+            .setColor('#defafe')
             .setDescription(`${user} is ${simp}% simp!`)
         )
     }

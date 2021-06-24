@@ -11,7 +11,7 @@ module.exports = {
     
         const embed = new MessageEmbed()
           .setAuthor(`User info for ${user.username}`, user.displayAvatarURL({ size: 4096, dynamic: true }))
-          .setColor('#d81b60')
+          .setColor('#defafe')
           .addFields(
             {
               name: 'User tag',

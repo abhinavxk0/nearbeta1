@@ -11,7 +11,7 @@ module.exports = {
 
         util.status(args[0], { port: parseInt(args[1]) }).then((response) => {
             const mcembed = new Discord.MessageEmbed()
-                .setColor('#d81b60')
+                .setColor('#defafe')
                 .setAuthor('Minecraft Server', 'https://toppng.com/public/uploads/thumbnail/block-of-grass-from-the-game-minecraft-minecraft-grass-block-vector-11562868488whfdyakzjr.png')
                 .addFields(
                     { name: '**Server IP**', value: response.host, inline: true },

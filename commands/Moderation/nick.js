@@ -1,27 +1,15 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
-
 module.exports = {
     name: 'nick',
+    cooldown: 10,
     async execute(client, command, message, args, Discord) {
 
+
+        // Variables
         const member = message.mentions.members.first() || client.users.fetch(args[0])
-
-
-        if (!member) return message.channel.send(
-            new Discord.MessageEmbed()
-                .setColor('#defafe')
-                .setDescription('Specify a member.')
-        );
-
         const arguments = args.slice(1).join(" ");
 
-        if (!arguments) return message.channel.send(
-            new Discord.MessageEmbed()
-                .setColor("#defafe")
-                .setDescription('Specify a nickname.')
-        );
 
+        // Permissions Checking
         if (!message.member.hasPermission("MANAGE_NICKNAMES")) return message.channel.send(
             new Discord.MessageEmbed()
                 .setColor('#defafe')
@@ -33,11 +21,24 @@ module.exports = {
                 .setDescription(`I don't have the \`MANAGE_NICKNAMES\` permission.`)
         )
 
-        try {
 
+        // Input Checking
+        if (!member) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#defafe')
+                .setDescription('Specify a member.')
+        );
+        if (!arguments) return message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor("#defafe")
+                .setDescription('Specify a nickname.')
+        );
+
+
+        // Execution of Task
+        try {
             const memberTarget = message.guild.members.cache.get(member.id)
             memberTarget.setNickname(arguments);
-
         } catch (err) {
             message.channel.send(
                 new Discord.MessageEmbed()
@@ -45,5 +46,7 @@ module.exports = {
                     .setDescription(`There was an error performing this task.`)
             )
         }
+
+
     }
 }

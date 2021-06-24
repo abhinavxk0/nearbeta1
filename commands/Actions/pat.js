@@ -5,7 +5,7 @@ module.exports = {
     async execute(client, command, message, args, Discord) {
         emotes.pat().then(gif => {
             const embed = new Discord.MessageEmbed()
-            embed.setColor('#d81b60')
+            embed.setColor('#defafe')
             embed.setImage(gif)
 
             if (args[0]) {

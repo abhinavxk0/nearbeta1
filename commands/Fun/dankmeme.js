@@ -19,7 +19,7 @@ module.exports = {
             dankembed.setTitle(`${memeTitle}`)
             dankembed.setURL(`${memeUrl}`)
             dankembed.setImage(memeImage)
-            dankembed.setColor('#d81b60')
+            dankembed.setColor('#defafe')
             dankembed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
             message.channel.send(dankembed);
         })

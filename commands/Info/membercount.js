@@ -1,9 +1,22 @@
-// module.exports = {
-//     name: 'membercount',
-//     execute(client, command, message, args, Discord){
-//         const { guild } = message
+module.exports = {
+    name: 'membercount',
+    execute(client, command, message, args, Discord) {
 
-//         const { memberCount } = guild
-//     message.channel.send('Members: ' + memberCount);
-//     }
-// }
+
+        // Variables
+        const { guild } = message
+        const { memberCount, id } = guild
+    
+
+        // Execution of Task
+        message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#defafe')
+                .setAuthor('Members')
+                .setDescription(memberCount)
+                .setTimestamp()
+        )
+
+
+    }
+}

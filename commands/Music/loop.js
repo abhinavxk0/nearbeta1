@@ -12,7 +12,7 @@ module.exports = {
             new Discord.MessageEmbed()
                 .setColor('#2f3136')
                 .setTitle('Error!')
-                .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
+                
                 .setDescription('> You need to be in a voice channel to execute this command!')
         )
         "Set repeat mode to `" + mode + "`"
@@ -20,7 +20,7 @@ module.exports = {
             new Discord.MessageEmbed()
             .setTitle('Repeat Mode')
             .setColor('#2f3136')
-            .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
+            
             .setDescription("Set repeat mode to `" + mode + "`")
         );
         message.react('🔁');

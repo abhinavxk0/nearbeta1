@@ -19,7 +19,7 @@ module.exports = {
             whembed.setTitle(`${memeTitle}`)
             whembed.setURL(`${memeUrl}`)
             whembed.setImage(memeImage)
-            whembed.setColor('#d81b60')
+            whembed.setColor('#defafe')
             whembed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
             message.channel.send(whembed);
         })

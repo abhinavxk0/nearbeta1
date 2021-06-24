@@ -13,7 +13,7 @@ client.distube.on("playSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
         .setTitle(`Now Playing`)
-        .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
+        
         .setDescription(`${song.name} - ${song.formattedDuration}`)
         .setThumbnail(song.thumbnail)
         .addFields(
@@ -39,7 +39,7 @@ client.distube.on("addSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
         .setTitle(`Added`)
-        .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
+        
         .setDescription(`${song.name} - ${song.formattedDuration}`)
         .setThumbnail(song.thumbnail)
         .addFields(
@@ -65,7 +65,7 @@ client.distube.on("empty", message => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
         .setTitle('Clearing queue and leaving channel!')
-        .setAuthor('NearBot Beta', 'https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
+        
         .setDescription('**Reason:** Disconnect because voice channel is empty!')
 ))
 client.commands = new Discord.Collection();
