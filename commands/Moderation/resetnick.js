@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'nick',
+    name: 'resetnick',
     async execute(client, command, message, args, Discord) {
 
 

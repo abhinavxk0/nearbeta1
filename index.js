@@ -2,12 +2,13 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const { config } = require('dotenv');
 const fs = require('fs');
-const db = require('quick.db');
-const got = require('got');
 const DisTube = require('distube');
 const prefix = 'n!';
+
 require('dotenv').config()
+
 client.cooldowns = new Discord.Collection();
+
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnEmpty: true, });
 client.distube.on("playSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
@@ -68,6 +69,8 @@ client.distube.on("empty", message => message.channel.send(
         
         .setDescription('**Reason:** Disconnect because voice channel is empty!')
 ))
+
+
 client.commands = new Discord.Collection();
 const commandFolders = fs.readdirSync('./commands');
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
@@ -89,6 +92,8 @@ client.once('ready', () => {
     })
         .catch(console.error);
 })
+
+
 client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot || (!message.guild)) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -121,4 +126,6 @@ client.on('message', async message => {
         message.channel.send('There was an error trying to execute that command!');
     }
 });
+
+
 client.login(process.env.BOT_TOKEN);
