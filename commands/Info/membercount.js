@@ -5,7 +5,9 @@ module.exports = {
 
         // Variables
         const { guild } = message
-        const { memberCount, id } = guild
+        const { memberCount } = guild
+        const botSize = message.guild.members.cache.filter( m => m.user.bot).size
+        const humans = memberCount - botSize
     
 
         // Execution of Task
@@ -13,7 +15,7 @@ module.exports = {
             new Discord.MessageEmbed()
                 .setColor('#defafe')
                 .setAuthor('Members')
-                .setDescription(memberCount)
+                .setDescription(`Human count : ${humans}\nBot count : ${botSize}`)
                 .setTimestamp()
         )
 
