@@ -1,9 +1,8 @@
 module.exports = {
-    name: 'simprate',
-    aliases: ['howsimp', 'simp'],
-    description: 'simp lol',
-    execute(client, command, message, args, Discord){
-        const simp = Math.floor(Math.random() * 100) + 1  
+    name: 'crackrate',
+    aliases: ['crack'],
+    async execute(client, command, message, args, Discord){
+        const crack = Math.floor(Math.random() * 100) + 1  
 
         let user;
         if (message.mentions.users.first()) {
@@ -15,10 +14,10 @@ module.exports = {
         }
         return message.channel.send(
             new Discord.MessageEmbed()
-            .setTitle(`Simp Calculator`)
+            .setTitle(`Crack Calculator`)
             
             .setColor('#defafe')
-            .setDescription(`${user} is ${simp}% simp!`)
+            .setDescription(`${user} is ${crack}% cracked!`)
         )
     }
 }

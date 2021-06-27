@@ -6,6 +6,7 @@ const fetch = require("node-fetch")
 
 module.exports = {
     name: "anime",
+    aliases: [''],
     description: "> Get the information about any anime",
     async execute(client, command, message, args, Discord) {
         //checking args
