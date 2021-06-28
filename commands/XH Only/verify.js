@@ -29,6 +29,17 @@ module.exports = {
             .setColor('#00FFFF')
             .setFooter(name, icon)
         )
+        client.channels.cache.get('858983724191318048').send(
+            new Discord.MessageEmbed()
+            .setColor('#00FFFF')
+            .setDescription(`${message.author} used \`n!verify\`!`)
+            .addFields(
+                {
+                    name: 'Roles Given',
+                    value: `<@&806823435350573088>\n<@&768460407189798952>\n<@&807536591459450881>\n<@&825285084830892038>\n<@&822367042329509889>`
+                }
+            )
+        )
         
     }
 }

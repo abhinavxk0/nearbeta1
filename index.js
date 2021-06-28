@@ -123,7 +123,11 @@ client.on('message', async message => {
         command.execute(client, command, message, args, Discord);
     } catch (error) {
         console.error(error);
-        message.channel.send('There was an error trying to execute that command!');
+        message.channel.send(
+            new Discord.MessageEmbed()
+            .setColor('#defafe')
+            .setDescription(`There was an error performing this task.`)
+        );
     }
 });
 
