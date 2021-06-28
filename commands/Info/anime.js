@@ -9,12 +9,7 @@ module.exports = {
     aliases: [''],
     description: "> Get the information about any anime",
     async execute(client, command, message, args, Discord) {
-        //checking args
-        if (!args[0]) {
-            return message.channel.send("> Please Give ous the name of anime");
-
-        }
-        //main part
+        
         var search = message.content.split(/\s+/g).slice(1).join(" ");
         kitsu.searchAnime(search).then(async result => {
             if (result.length === 0) {
