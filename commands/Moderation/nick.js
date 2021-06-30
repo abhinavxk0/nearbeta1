@@ -1,5 +1,6 @@
 module.exports = {
     name: 'nick',
+    aliases: ['setnick', 'nickname'],
     cooldown: 10,
     async execute(client, command, message, args, Discord) {
 
