@@ -2,7 +2,6 @@ const DisTube = require('distube');
 
 module.exports = {
     name: 'stop',
-    aliases: ['dc'],
     category: "music",
     description: 'stops music',
     async execute(client, command, message, args, Discord) {
@@ -18,7 +17,7 @@ module.exports = {
             .setColor('#2f3136')
             .setTitle('Error!')
                 
-            .setDescription('> You need the `DJ` role to skip songs!\n To skip songs make a role named `DJ`!')        
+            .setDescription('> You need the `DJ` role to stop songs!\n To skip songs make a role named `DJ`!')        
         )
 
         let queue = await client.distube.getQueue(message);
@@ -29,13 +28,13 @@ module.exports = {
                 new Discord.MessageEmbed()
                     .setColor('#2f3136')
                     .setTitle('Stopped!')
-                     
                     .setDescription('> Stopped music playback and disconnected from the voice channel!')
-            )
+            ).then(function (message){
+                message.react('🛑')
+            })
         } else if (!queue) {
             return
         };
-        message.react('🛑');
     }
 }
 

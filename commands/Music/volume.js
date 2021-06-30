@@ -21,8 +21,7 @@ module.exports = {
         message.channel.send(
             new Discord.MessageEmbed()
                 .setColor('#2f3136')
-                .setTitle('🔊  Volume updated!')
-                
+                .setAuthor('🔊  Volume updated!')
                 .setDescription(`> The volume has been set to ${args[0]}`)
         )
     }

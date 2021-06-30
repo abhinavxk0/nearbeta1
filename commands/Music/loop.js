@@ -18,12 +18,11 @@ module.exports = {
         "Set repeat mode to `" + mode + "`"
         message.channel.send(
             new Discord.MessageEmbed()
-            .setTitle('Repeat Mode')
+            .setAuthor('Repeat Mode')
             .setColor('#2f3136')
-            
             .setDescription("Set repeat mode to `" + mode + "`")
-        );
-        message.react('🔁');
+        ).then(function (message){
+        message.react('🔁');})
     }
 }
 

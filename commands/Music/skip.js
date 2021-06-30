@@ -20,9 +20,11 @@ module.exports = {
             .setTitle('Error!')
                 
             .setDescription('> You need the `DJ` role to skip songs!\n To skip songs make a role named `DJ`!')        
-        )
+        ).then(function(message){
+            message.react("<:skip:850343858759270471>")
+        })
         
         client.distube.skip(message)
-        message.react("<:skip:850343858759270471>")
+
     }
 }

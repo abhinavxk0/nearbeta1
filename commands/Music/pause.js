@@ -7,11 +7,13 @@ module.exports = {
                 .setTitle('Error!')
                 
                 .setDescription('> You need to be in a voice channel to execute this command!')
-        )
+        ).then(function(message){
+            message.react('<:pauseplay:850345851523039252>');
+        })
 
         client.distube.pause(message);
 
-        message.react('<:pauseplay:850345851523039252>');
+        
 
     }
 }

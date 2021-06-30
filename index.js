@@ -13,61 +13,28 @@ client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true
 client.distube.on("playSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
-        .setTitle(`Now Playing`)
-        
-        .setDescription(`${song.name} - ${song.formattedDuration}`)
+        .setAuthor(`Now Playing`)
+        .setDescription(`${song.name} - \`${song.formattedDuration}\``)
         .setThumbnail(song.thumbnail)
-        .addFields(
-            {
-                name: 'Likes',
-                value: song.likes,
-                inline: true,
-            },
-            {
-                name: 'Dislikes',
-                value: song.dislikes,
-                inline: true,
-            },
-            {
-                name: 'Views',
-                value: song.views,
-                inline: true,
-            },
-        )
         .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
-))
+).then(function (message){
+    message.react('<:play:850343858747211796>')
+})
+
+)
 client.distube.on("addSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
-        .setTitle(`Added`)
-        
-        .setDescription(`${song.name} - ${song.formattedDuration}`)
+        .setAuthor(`Added`)
+        .setDescription(`${song.name} - \`${song.formattedDuration}\``)
         .setThumbnail(song.thumbnail)
-        .addFields(
-            {
-                name: 'Likes',
-                value: song.likes,
-                inline: true,
-            },
-            {
-                name: 'Dislikes',
-                value: song.dislikes,
-                inline: true,
-            },
-            {
-                name: 'Views',
-                value: song.views,
-                inline: true,
-            },
-        )
         .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
 ))
 client.distube.on("empty", message => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
-        .setTitle('Clearing queue and leaving channel!')
-        
-        .setDescription('**Reason:** Disconnect because voice channel is empty!')
+        .setAuthor('Clearing queue and leaving channel!')
+        .setFooter('Reason: Disconnect because voice channel is empty!')
 ))
 
 
@@ -131,5 +98,5 @@ client.on('message', async message => {
     }
 });
 
-
-client.login(process.env.BOT_TOKEN);
+client.login('ODIyNDI0MDc2NDkxNTU0ODI3.YFSEGw.GCxcVXdIW88KqQdQiKLmun0pxl4');
+// client.login(process.env.BOT_TOKEN);
