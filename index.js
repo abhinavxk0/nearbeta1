@@ -14,7 +14,7 @@ client.distube.on("playSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
         .setAuthor(`Now Playing`)
-        .setDescription(`${song.name} - \`${song.formattedDuration}\``)
+        .setDescription(`[${song.name}](${song.url}) - \`${song.formattedDuration}\``)
         .setThumbnail(song.thumbnail)
         .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
 ).then(function (message){
@@ -26,7 +26,7 @@ client.distube.on("addSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
         .setAuthor(`Added`)
-        .setDescription(`${song.name} - \`${song.formattedDuration}\``)
+        .setDescription(`[${song.name}](${song.url}) - \`${song.formattedDuration}\``)
         .setThumbnail(song.thumbnail)
         .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
 ))
