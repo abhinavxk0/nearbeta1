@@ -2,8 +2,7 @@ module.exports = {
     name: "embed",
     async execute(client, command, message, args, Discord) {
 
-        let title = args.join(" ")
-        let color = args.slice(1)
+        let title = args[0]
         let description = args.slice(2).join(" ")
         const error = new Discord.MessageEmbed()
             .setColor('#defafe')
@@ -15,9 +14,9 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setTitle(title)
-            .setColor(color)
+            .setColor('#defafe')
             .setDescription(description)
-            .setFooter(`Embed created by ${message.author.username}`)
+            .setFooter(`Embed created by ${message.author.username}`, message.author.displayAvatarURL({ size: 4096, dynamic: true }))
         message.delete() // this deletes the command
 
         message.channel.send(embed)
