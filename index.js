@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const { config } = require('dotenv');
 const fs = require('fs');
 const DisTube = require('distube');
-const prefix = 'n!';
+const prefix = 'n!' | 'N!';
 
 require('dotenv').config()
 
