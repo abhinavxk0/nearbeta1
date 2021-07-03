@@ -7,7 +7,7 @@ module.exports = {
         const helpEmbed = new Discord.MessageEmbed()
             .setColor('#defafe')
             .setTitle('Help Command')
-            .setThumbnail('https://cdn.discordapp.com/avatars/822424076491554827/701a8644d439896e81ab38824b0c395d.webp?size=4096')
+            .setThumbnail(client.user.displayAvatarURL({ size: 4096, dynamic: true }))
             .addFields(
                 { 
                     name: '・Info',
