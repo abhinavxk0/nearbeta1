@@ -17,11 +17,7 @@ client.distube.on("playSong", (message, queue, song) => message.channel.send(
         .setDescription(`[${song.name}](${song.url}) - \`${song.formattedDuration}\``)
         .setThumbnail(song.thumbnail)
         .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
-).then(function (message){
-    message.react('<:play:850343858747211796>')
-})
-
-)
+))
 client.distube.on("addSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
@@ -96,6 +92,24 @@ client.on('message', async message => {
             .setDescription(`There was an error performing this task.`)
         );
     }
+});
+client.on("message", message => {
+    if (message.author.bot) return false;
+
+    if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
+
+    if (message.mentions.has(client.user.id)) {
+        message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#defafe')
+                .setTitle('NearBeta')
+                .setDescription(
+                    `The prefix for ${client.user} is \`n!\`!\n
+                    [Invite NearBeta](https://discord.com/oauth2/authorize?client_id=822424076491554827&scope=bot&permissions=8) | [Support Server](https://discord.gg/CHg3UDcEuJ)`
+                )
+                .setFooter('Thank you for choosing NearBeta!')
+        );
+    };
 });
 
 

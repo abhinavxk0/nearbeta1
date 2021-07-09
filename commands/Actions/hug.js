@@ -18,7 +18,6 @@ module.exports = {
                 embed.setDescription(`${message.author.username} wants a hug!`)
             }
             message.channel.send(embed);
-            message.react('835016803683794986');
         })
 
     }

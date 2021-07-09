@@ -11,8 +11,6 @@ module.exports = {
         new Discord.MessageEmbed()
         .setColor('#defafe')
         .setDescription(lyrics)
-    ).then(function(message){
-        message.react('📜')
-    })
+    )
     }
 }   

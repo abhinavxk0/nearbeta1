@@ -29,9 +29,7 @@ module.exports = {
                     .setColor('#2f3136')
                     .setTitle('Stopped!')
                     .setDescription('> Stopped music playback and disconnected from the voice channel!')
-            ).then(function (message){
-                message.react('🛑')
-            })
+            )
         } else if (!queue) {
             return
         };

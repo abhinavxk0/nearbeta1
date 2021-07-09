@@ -13,7 +13,6 @@ module.exports = {
             new Discord.MessageEmbed()
                 .setColor('#2f3136')
                 .setTitle('OMFG')
-                
                 .setDescription('> Who the heck are you trying to ear-r*pe?\nUse a value below 100!')
         )
 
