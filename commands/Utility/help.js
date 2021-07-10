@@ -9,37 +9,17 @@ module.exports = {
             .setTitle('Help Command')
             .setThumbnail(client.user.displayAvatarURL({ size: 4096, dynamic: true }))
             .addField([
-                `**Info**: \`anime, avatar, color, corona, mcserver, membercount, role-info, serverinfo, spotify, userinfo, youtube\``
+                `**Info:** \`anime, avatar, color, corona, mcserver, membercount, role-info, serverinfo, spotify, userinfo, youtube\``,
+                `**Moderation:** \`ban, clear, drag, hackban, kick, nick, resetnick, unban\``,
+                `**Actions:** \`hug, kiss, pat\``,
+                `**Fun:**\`8ball, afk, crackrate, dankmeme, simprate, wholesomememe\``,
+                `**Utility:** \`embed, help, invite, ping, servers, steal\``
             ])
-            .addFields(
-                { 
-                    name: '・Info',
-                    value: '`anime`, `avatar`, `color`, `corona`\n`mcserver`, `membercount`, `serverinfo`, `userinfo`, `youtube-s`',
-                    inline: true,
-                },                
-                { 
-                    name: '・Moderation',
-                    value: '`ban`, `hackban`, `unban`, `kick`\n`kick`, `clear`, `nick`, `resetnick`',
-                    inline: true,
-                },
-                { 
-                    name: '・Fun',
-                    value: '`8ball`, `dankmeme`, `simprate`, `wholesomememe`',
-                    inline: true,
-                },
-                { 
-                    name: '・Music',
-                    value: '`play`, `stop`, `pause`, `resume`\n`queue`, `skip`, `repeat`, `shuffle`\n`volume`',
-                    inline: true,
-                },
-                { 
-                    name: '・Utility',
-                    value: '`embed`, `invite`, `ping`, `servers`',
-                    inline: true,
-                },
-
+            .setDescription(
+                `The prefix for ${client.user} is \`n!\`!\n
+                [Invite NearBeta](https://discord.com/oauth2/authorize?client_id=822424076491554827&scope=bot&permissions=8) | [Support Server](https://discord.gg/CHg3UDcEuJ)`
             )
-            .setFooter(`${message.author.username} have an amazing day ahead!`, message.author.displayAvatarURL({ size: 4096, dynamic: true }));
+            .setFooter('Thank you for choosing NearBeta!')
     message.channel.send(helpEmbed)
     }
 }
