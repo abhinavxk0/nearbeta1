@@ -45,7 +45,7 @@ module.exports = {
                 new Discord.MessageEmbed()
                     .setColor('#defafe')
                     .setDescription(`${target} has been kicked.\nReason: ${reason}`)
-                    .setFooter(`Kicked by ${message.author.username}`)
+                    .setFooter(`Kicked by ${message.author.username}`, message.author.displayAvatarURL({dynamic:true}))
             )
         } catch {
             message.channel.send(

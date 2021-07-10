@@ -8,6 +8,9 @@ module.exports = {
             .setColor('#defafe')
             .setTitle('Help Command')
             .setThumbnail(client.user.displayAvatarURL({ size: 4096, dynamic: true }))
+            .addField([
+                `**Info**: \`anime, avatar, color, corona, mcserver, membercount, role-info, serverinfo, spotify, userinfo, youtube\``
+            ])
             .addFields(
                 { 
                     name: '・Info',

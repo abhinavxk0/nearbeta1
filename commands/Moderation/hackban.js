@@ -46,7 +46,7 @@ module.exports = {
             message.channel.send(new Discord.MessageEmbed()
                 .setColor('#defafe')
                 .setDescription(`<@${user.id}> was banned.\nReason: ${reason}`))
-
+                .setFooter(`Banned by ${message.author.username}`, message.author.displayAvatarURL({dynamic:true}))
         }).catch(err => {
             console.log(err)
             return message.channel.send(
