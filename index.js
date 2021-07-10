@@ -74,7 +74,7 @@ client.on('message', async message => {
                 new Discord.MessageEmbed()
                     .setDescription(`${mentionedMember} is AFK : ${reason} - (${timeAgo})`)
                     .setColor('#defafe')
-            )
+            ).then(msg => {msg.delete({ timeout: 5000 });})
             }
         }
     
@@ -85,7 +85,7 @@ client.on('message', async message => {
                 new Discord.MessageEmbed()
                     .setDescription(`You're back, ${message.member}? I reset your AFK!`)
                     .setColor('#defafe')
-            )
+            ).then(msg => {msg.delete({ timeout: 5000 });})
         }
         if (!message.content.startsWith(prefix) || message.author.bot || (!message.guild)) return;
         const args = message.content.slice(prefix.length).trim().split(/ +/);
