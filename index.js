@@ -136,8 +136,8 @@ client.on("message", message => {
                 .setColor('#defafe')
                 .setTitle('NearBeta')
                 .setDescription(
-                    `The prefix for ${client.user} is \`n!\`!\n
-                    [Invite NearBeta](https://discord.com/oauth2/authorize?client_id=822424076491554827&scope=bot&permissions=8) | [Support Server](https://discord.gg/CHg3UDcEuJ)`
+                    `The prefix for ${client.user} is \`n!\`!\nTo see all ${client.user.username}'s commands go to the **[website](https://nearbeta.gitbook.io/nearbeta/)**!\n
+                    **[Invite NearBeta](https://discord.com/oauth2/authorize?client_id=822424076491554827&scope=bot&permissions=8) | [Support Server](https://discord.gg/CHg3UDcEuJ) | [Website](https://nearbeta.gitbook.io/nearbeta/)**`
                 )
                 .setFooter('Thank you for choosing NearBeta!')
         );
