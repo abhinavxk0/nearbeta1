@@ -20,7 +20,6 @@ module.exports = {
                         new Discord.MessageEmbed()
                             .setAuthor('Successfully added emoji(s)!')
                             .setColor('#defafe')
-                            .setDescription(`${emoji.url}`)
                             .setThumbnail(emoji.url)
                     ))
             }
