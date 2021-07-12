@@ -12,6 +12,7 @@ module.exports = {
         x.user.username === args[0]) || client.users.fetch(args[0]) 
 
         const reason = args.slice(1).join(' ') || 'No specified reason.'
+        const Areason = `Banned by ${message.author.id}, Reason:  ${args.slice(1).join(' ')}` || 'No specified reason.'
 
 
         // Permissions Checking
@@ -48,7 +49,7 @@ module.exports = {
         // Execution of Task
         try {
             const memberTarget = message.guild.members.cache.get(target.id)
-            memberTarget.ban({reason})
+            memberTarget.ban({Areason})
             message.channel.send(
                 new Discord.MessageEmbed()
                     .setColor('#defafe')
