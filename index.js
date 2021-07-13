@@ -10,6 +10,8 @@ const moment = require('moment')
 require('dotenv').config()
 
 client.cooldowns = new Discord.Collection();
+client.commands = new Discord.Collection();
+client.snipes = new Discord.Collection();
 
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnEmpty: true, });
 client.distube.on("playSong", (message, queue, song) => message.channel.send(
@@ -36,7 +38,6 @@ client.distube.on("empty", message => message.channel.send(
 ))
 
 
-client.commands = new Discord.Collection();
 const commandFolders = fs.readdirSync('./commands');
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for (const folder of commandFolders) {
@@ -143,5 +144,17 @@ client.on("message", message => {
         );
     };
 });
+client.on('messageDelete', message => {
+    let snipes = client.snipes.get(message.channel.id) || [];
+    if (snipes.length > 5) snipes = snipes.slice(0, 4)
+
+    snipes.unshift({
+        msg: message,
+        image: message.attachments.first()?.proxyURL || null,
+        time: Date.now(),
+    })
+    
+    client.snipes.set(message.channel.id, snipes)
+})
 
 client.login(process.env.BOT_TOKEN);
