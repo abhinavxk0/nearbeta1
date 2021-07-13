@@ -126,24 +126,25 @@ client.on('message', async message => {
     
         
     });
-client.on("message", message => {
-    if (message.author.bot) return false;
+// client.on("message", message => {
+//     if (message.author.bot) return false;
 
-    if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
+//     if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
+    
 
-    if (message.mentions.has(client.user.id)) {
-        message.channel.send(
-            new Discord.MessageEmbed()
-                .setColor('#defafe')
-                .setTitle('NearBeta')
-                .setDescription(
-                    `The prefix for ${client.user} is \`n!\`!\nTo see all ${client.user.username}'s commands go to the **[website](https://nearbeta.gitbook.io/nearbeta/)**!\n
-                    **[Invite NearBeta](https://discord.com/oauth2/authorize?client_id=822424076491554827&scope=bot&permissions=8) | [Support Server](https://discord.gg/CHg3UDcEuJ) | [Website](https://nearbeta.gitbook.io/nearbeta/)**`
-                )
-                .setFooter('Thank you for choosing NearBeta!')
-        );
-    };
-});
+//     if (message.mentions.has(client.user.id)) {
+//         message.channel.send(
+//             new Discord.MessageEmbed()
+//                 .setColor('#defafe')
+//                 .setTitle('NearBeta')
+//                 .setDescription(
+//                     `The prefix for ${client.user} is \`n!\`!\nTo see all ${client.user.username}'s commands go to the **[website](https://nearbeta.gitbook.io/nearbeta/)**!\n
+//                     **[Invite NearBeta](https://discord.com/oauth2/authorize?client_id=822424076491554827&scope=bot&permissions=8) | [Support Server](https://discord.gg/CHg3UDcEuJ) | [Website](https://nearbeta.gitbook.io/nearbeta/)**`
+//                 )
+//                 .setFooter('Thank you for choosing NearBeta!')
+//         );
+//     };
+// });
 client.on('messageDelete', message => {
     let snipes = client.snipes.get(message.channel.id) || [];
     if (snipes.length > 5) snipes = snipes.slice(0, 4)
