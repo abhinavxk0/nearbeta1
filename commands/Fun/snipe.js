@@ -23,7 +23,7 @@ module.exports = {
             new Discord.MessageEmbed()
                 .setAuthor(msg.author.tag, msg.author.displayAvatarURL({dynamic: true}))
                 .setImage(image)
-                .setFooter(`${moment(time).fromNow()} | ${snipes + 1} / ${snipes.length}`)
+                .setFooter(`${moment(time).fromNow()} | ${snipe + 1} / ${snipes.length}`)
                 .setColor('#defafe')
                 .setDescription(msg.content)
         )
