@@ -30,8 +30,7 @@ module.exports = {
         .addField("__Additional Information__", [
           `**Created**: ${moment(guild.createdTimestamp).format('LLL')}, ${moment(
             guild.createdTimestamp
-          ).fromNow()}`,
-          `**Region**: ${guild.region.toUpperCase()}`
+          ).fromNow()}`,  
         ])
         .addField('__Boost Information__', [
           `**Boost Tier**: ${guild.premiumTier ? `Tier ${guild.premiumTier}` : 'None'}`,
