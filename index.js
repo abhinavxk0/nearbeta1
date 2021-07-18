@@ -22,14 +22,14 @@ client.distube.on("playSong", (message, queue, song) => message.channel.send(
         .setColor('#2f3136')
         .setDescription(`**Now Playing:**\n[${song.name}](${song.url}) - \`${song.formattedDuration}\``)
         .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
-).then(msg => { msg.delete({ timeout: 10000 }); }))
+).then(message => { message.delete({ timeout: 10000 }); }))
 
 client.distube.on("addSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
         .setDescription(`**Added:**\n[${song.name}](${song.url}) - \`${song.formattedDuration}\``)
         .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
-).then(msg => { msg.delete({ timeout: 10000 }); }))
+).then(message => { message.delete({ timeout: 10000 }); }))
 
 client.distube.on("empty", message => message.channel.send(
     new Discord.MessageEmbed()
