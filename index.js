@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
-                require('discord-reply')
+require('discord-reply')
 const client = new Discord.Client();
+const { config } = require('dotenv');
 const fs = require('fs');
 const DisTube = require('distube');
 const prefix = 'n!';
@@ -13,23 +14,20 @@ client.cooldowns = new Discord.Collection();
 client.commands = new Discord.Collection();
 client.snipes = new Discord.Collection();
 
-client.distube = new DisTube(client, 
-    { searchSongs: false, emitNewSongOnly: true, leaveOnStop: false }
-    );
-
+client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnStop: false });
 client.distube.on("playSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
-        .setDescription(`**Now Playing:**\n[${song.name}](${song.url}) - \`${song.formattedDuration}\``)
+        .setDescription(`**Now Playing:** [${song.name}](${song.url}) - \`${song.formattedDuration}\``)
         .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
-).then(msg => { msg.delete({ timeout: 10000 }); }))
+)).then(msg => { msg.delete({ timeout: 10000 }); })
 
 client.distube.on("addSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
-        .setDescription(`**Added:**\n[${song.name}](${song.url}) - \`${song.formattedDuration}\``)
+        .setDescription(`**Added:** [${song.name}](${song.url}) - \`${song.formattedDuration}\``)
         .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
-).then(msg => { msg.delete({ timeout: 10000 }); }))
+)).then(msg => { msg.delete({ timeout: 10000 }); })
 
 client.distube.on("empty", message => message.channel.send(
     new Discord.MessageEmbed()
@@ -41,32 +39,22 @@ client.distube.on("empty", message => message.channel.send(
 
 const commandFolders = fs.readdirSync('./commands');
 for (const folder of commandFolders) {
-
     const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
     for (const file of commandFiles) {
-
         const command = require(`./commands/${folder}/${file}`);
         client.commands.set(command.name, command);
-
     }
-
 }
 client.once('ready', () => {
-
     console.log('NearBeta is online.')
-
     client.user.setPresence({
-
         activity: {
             name: 'n!help || n!ping',
             type: "LISTENING"
         },
-
         status: 'online'
-
     })
         .catch(console.error);
-    
 })
 
 
@@ -75,7 +63,6 @@ client.on('message', async message => {
     const mentionedMember = message.mentions.members.first();
 
     if (mentionedMember) {
-
         const data = afk.get(mentionedMember.id);
 
         if (data) {
@@ -88,7 +75,6 @@ client.on('message', async message => {
                     .setColor('#defafe')
             ).then(msg => { msg.delete({ timeout: 10000 }); })
         }
-
     }
 
     const getData = afk.get(message.author.id);
