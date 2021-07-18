@@ -6,6 +6,7 @@ const DisTube = require('distube');
 const prefix = 'n!';
 const { afk } = require('./Collection')
 const moment = require('moment')
+const { config } = require('dotenv');
 
 require('dotenv').config()
 
