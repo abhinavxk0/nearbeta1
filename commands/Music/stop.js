@@ -27,8 +27,7 @@ module.exports = {
             message.channel.send(
                 new Discord.MessageEmbed()
                     .setColor('#2f3136')
-                    .setTitle('Stopped!')
-                    .setDescription('> Stopped music playback and disconnected from the voice channel!')
+                    .setDescription('Disconnected!')
             )
         } else if (!queue) {
             return

@@ -1,3 +1,4 @@
+require('dotenv').config()
 const Discord = require('discord.js');
                 require('discord-reply')
 const client = new Discord.Client();
@@ -6,16 +7,14 @@ const DisTube = require('distube');
 const prefix = 'n!';
 const { afk } = require('./Collection')
 const moment = require('moment')
-const { config } = require('dotenv');
 
-require('dotenv').config()
 
 client.cooldowns = new Discord.Collection();
 client.commands = new Discord.Collection();
 client.snipes = new Discord.Collection();
 
 client.distube = new DisTube(client, 
-    { searchSongs: false, emitNewSongOnly: true, leaveOnStop: false }
+    { searchSongs: false, emitNewSongOnly: true}
     );
 
 client.distube.on("playSong", (message, queue, song) => message.channel.send(
