@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-                require('discord-reply')
+require('discord-reply')
 const client = new Discord.Client();
 const { config } = require('dotenv');
 const fs = require('fs');
@@ -62,76 +62,76 @@ client.once('ready', () => {
 
 
 client.on('message', async message => {
-    
+
     const mentionedMember = message.mentions.members.first();
-    
-        if (mentionedMember) {
-            const data = afk.get(mentionedMember.id);
-    
-            if (data) {
-                const [timestamp, reason] = data;
-                const timeAgo = moment(timestamp).fromNow()
-    
+
+    if (mentionedMember) {
+        const data = afk.get(mentionedMember.id);
+
+        if (data) {
+            const [timestamp, reason] = data;
+            const timeAgo = moment(timestamp).fromNow()
+
             message.channel.send(
                 new Discord.MessageEmbed()
                     .setDescription(`${mentionedMember} is AFK : ${reason} - (${timeAgo})`)
                     .setColor('#defafe')
-            ).then(msg => {msg.delete({ timeout: 5000 });})
-            }
+            ).then(msg => { msg.delete({ timeout: 5000 }); })
         }
-    
-        const getData = afk.get(message.author.id);
-        if (getData) {
-            afk.delete(message.author.id)
-            message.channel.send(
-                new Discord.MessageEmbed()
-                    .setDescription(`You're back, ${message.member}? I reset your AFK!`)
-                    .setColor('#defafe')
-            ).then(msg => {msg.delete({ timeout: 5000 });})
+    }
+
+    const getData = afk.get(message.author.id);
+    if (getData) {
+        afk.delete(message.author.id)
+        message.channel.send(
+            new Discord.MessageEmbed()
+                .setDescription(`You're back, ${message.member}? I reset your AFK!`)
+                .setColor('#defafe')
+        ).then(msg => { msg.delete({ timeout: 5000 }); })
+    }
+    if (!message.content.startsWith(prefix) || message.author.bot || (!message.guild)) return;
+    const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const commandName = args.shift().toLowerCase();
+    const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+    if (!command) return;
+    if (command.args && !args.length) {
+        return message.channel.send(`> You didn't provide any arguments, ${message.author}!`);
+    }
+    const { cooldowns } = client;
+    if (!cooldowns.has(command.name)) {
+        cooldowns.set(command.name, new Discord.Collection());
+    }
+    const now = Date.now();
+    const timestamps = cooldowns.get(command.name);
+    const cooldownAmount = (command.cooldown || 3) * 1000;
+    if (timestamps.has(message.author.id)) {
+        const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
+        if (now < expirationTime) {
+            const timeLeft = (expirationTime - now) / 1000;
+            return message.channel.send(`A little too fast here!\n Wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
         }
-        if (!message.content.startsWith(prefix) || message.author.bot || (!message.guild)) return;
-        const args = message.content.slice(prefix.length).trim().split(/ +/);
-        const commandName = args.shift().toLowerCase();
-        const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-        if (!command) return;
-        if (command.args && !args.length) {
-            return message.channel.send(`> You didn't provide any arguments, ${message.author}!`);
-        }
-        const { cooldowns } = client;
-        if (!cooldowns.has(command.name)) {
-            cooldowns.set(command.name, new Discord.Collection());
-        }
-        const now = Date.now();
-        const timestamps = cooldowns.get(command.name);
-        const cooldownAmount = (command.cooldown || 3) * 1000;
-        if (timestamps.has(message.author.id)) {
-            const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
-            if (now < expirationTime) {
-                const timeLeft = (expirationTime - now) / 1000;
-                return message.channel.send(`A little too fast here!\n Wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
-            }
-        }
-        timestamps.set(message.author.id, now);
-        setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
-    
-        try {
-            command.execute(client, command, message, args, Discord);
-        } catch (error) {
-            console.error(error);
-            message.channel.send(
-                new Discord.MessageEmbed()
-                    .setColor('#defafe')
-                    .setDescription(`There was an error performing this task.`)
-            );
-        }
-    
-        
-    });
+    }
+    timestamps.set(message.author.id, now);
+    setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+
+    try {
+        command.execute(client, command, message, args, Discord);
+    } catch (error) {
+        console.error(error);
+        message.channel.send(
+            new Discord.MessageEmbed()
+                .setColor('#defafe')
+                .setDescription(`There was an error performing this task.`)
+        );
+    }
+
+
+});
 // client.on("message", message => {
 //     if (message.author.bot) return false;
 
 //     if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
-    
+
 
 //     if (message.mentions.has(client.user.id)) {
 //         message.channel.send(
@@ -155,7 +155,7 @@ client.on('messageDelete', message => {
         image: message.attachments.first()?.proxyURL || null,
         time: Date.now(),
     })
-    
+
     client.snipes.set(message.channel.id, snipes)
 })
 
