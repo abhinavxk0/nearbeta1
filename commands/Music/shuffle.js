@@ -5,7 +5,7 @@ module.exports = {
             new Discord.MessageEmbed()
                 .setColor('#2f3136')
                 .setTitle('Error!')
-                .setDescription('> You need to be in a voice channel to execute this command!')
+                .setDescription('You need to be in a voice channel to execute this command!')
         )
 
         client.distube.shuffle(message);

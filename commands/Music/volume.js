@@ -7,21 +7,16 @@ module.exports = {
                 .setColor('#2f3136')
                 .setTitle('Error!')
                 
-                .setDescription('> You need to be in a voice channel to execute this command!')
+                .setDescription('You need to be in a voice channel to execute this command!')
         )
-        if (args[0] > 100) return message.channel.send(
+        if (args[0] > 200) return message.channel.send(
             new Discord.MessageEmbed()
                 .setColor('#2f3136')
                 .setTitle('OMFG')
-                .setDescription('> Who the heck are you trying to ear-r*pe?\nUse a value below 100!')
+                .setDescription('> Who the heck are you trying to ear-r*pe?\nUse a value below 200!')
         )
 
         client.distube.setVolume(message, args[0]);
-        message.channel.send(
-            new Discord.MessageEmbed()
-                .setColor('#2f3136')
-                .setAuthor('🔊  Volume updated!')
-                .setDescription(`> The volume has been set to ${args[0]}`)
-        )
+        message.lineReplyNoMention(`The volume has been set to ${args[0]}`)
     }
 }

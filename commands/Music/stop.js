@@ -10,7 +10,7 @@ module.exports = {
                 .setColor('#2f3136')
                 .setTitle('Error!')
                 
-                .setDescription('> You need to be in a voice channel to execute this command!')
+                .setDescription('You need to be in a voice channel to execute this command!')
         )
         if (!message.member.roles.cache.some(role => role.name === 'DJ')) return message.channel.send(
             new Discord.MessageEmbed()

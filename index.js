@@ -14,23 +14,21 @@ client.cooldowns = new Discord.Collection();
 client.commands = new Discord.Collection();
 client.snipes = new Discord.Collection();
 
-client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnEmpty: true, });
+client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnStop: false });
 client.distube.on("playSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
-        .setAuthor(`Now Playing`)
-        .setDescription(`[${song.name}](${song.url}) - \`${song.formattedDuration}\``)
-        .setThumbnail(song.thumbnail)
+        .setDescription(`**Now Playing:** [${song.name}](${song.url}) - \`${song.formattedDuration}\``)
         .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
-))
+)).then(msg => { msg.delete({ timeout: 10000 }); })
+
 client.distube.on("addSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
-        .setAuthor(`Added`)
-        .setDescription(`[${song.name}](${song.url}) - \`${song.formattedDuration}\``)
-        .setThumbnail(song.thumbnail)
+        .setDescription(`**Added:** [${song.name}](${song.url}) - \`${song.formattedDuration}\``)
         .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
-))
+)).then(msg => { msg.delete({ timeout: 10000 }); })
+
 client.distube.on("empty", message => message.channel.send(
     new Discord.MessageEmbed()
         .setColor('#2f3136')
@@ -40,7 +38,6 @@ client.distube.on("empty", message => message.channel.send(
 
 
 const commandFolders = fs.readdirSync('./commands');
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for (const folder of commandFolders) {
     const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
     for (const file of commandFiles) {
@@ -76,7 +73,7 @@ client.on('message', async message => {
                 new Discord.MessageEmbed()
                     .setDescription(`${mentionedMember} is AFK : ${reason} - (${timeAgo})`)
                     .setColor('#defafe')
-            ).then(msg => { msg.delete({ timeout: 5000 }); })
+            ).then(msg => { msg.delete({ timeout: 10000 }); })
         }
     }
 
@@ -87,7 +84,7 @@ client.on('message', async message => {
             new Discord.MessageEmbed()
                 .setDescription(`You're back, ${message.member}? I reset your AFK!`)
                 .setColor('#defafe')
-        ).then(msg => { msg.delete({ timeout: 5000 }); })
+        ).then(msg => { msg.delete({ timeout: 10000 }); })
     }
     if (!message.content.startsWith(prefix) || message.author.bot || (!message.guild)) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -127,25 +124,7 @@ client.on('message', async message => {
 
 
 });
-// client.on("message", message => {
-//     if (message.author.bot) return false;
 
-//     if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
-
-
-//     if (message.mentions.has(client.user.id)) {
-//         message.channel.send(
-//             new Discord.MessageEmbed()
-//                 .setColor('#defafe')
-//                 .setTitle('NearBeta')
-//                 .setDescription(
-//                     `The prefix for ${client.user} is \`n!\`!\nTo see all ${client.user.username}'s commands go to the **[website](https://nearbeta.gitbook.io/nearbeta/)**!\n
-//                     **[Invite NearBeta](https://discord.com/oauth2/authorize?client_id=822424076491554827&scope=bot&permissions=8) | [Support Server](https://discord.gg/CHg3UDcEuJ) | [Website](https://nearbeta.gitbook.io/nearbeta/)**`
-//                 )
-//                 .setFooter('Thank you for choosing NearBeta!')
-//         );
-//     };
-// });
 client.on('messageDelete', message => {
     let snipes = client.snipes.get(message.channel.id) || [];
     if (snipes.length > 5) snipes = snipes.slice(0, 4)
