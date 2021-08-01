@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'pause',
-    async execute(client, command, message, args, Discord) {
+    name: 'seek',
+    async execute(client, command, message, args, Discord){
 
         if (!message.member.voice.channel) return message.channel.lineReplyNoMention(
             new Discord.MessageEmbed()
@@ -8,10 +8,6 @@ module.exports = {
                 .setDescription('You need to be in a voice channel to execute this command!')
         ).then(message => { message.delete({ timeout: 10000 }); })
 
-        client.distube.pause(message);
-        message.react('⏸')
-
-        
-
+        client.distube.seek(message, Number(args[0]));
     }
 }

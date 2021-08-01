@@ -9,18 +9,17 @@ module.exports = {
         let mode = client.distube.setRepeatMode(message, parseInt(args[0]));
         mode = mode ? mode == 2 ? "Repeat Queue" : "Repeat Song" : "Off";
         
-        if (!message.member.voice.channel) return message.channel.send(
+        if (!message.member.voice.channel) return message.channel.lineReplyNoMention(
             new Discord.MessageEmbed()
                 .setColor('#2f3136')
                 .setDescription('You need to be in a voice channel to execute this command!')
-        )
+        ).then(message => { message.delete({ timeout: 10000 }); })
         message.channel.send(
             new Discord.MessageEmbed()
             .setAuthor('Repeat Mode')
             .setColor('#2f3136')
-            .setDescription("Set repeat mode to `" + mode + "`")
-        ).then(function (message){
-        message.react('🔁');})
+            .setDescription(`Set repeat mode to \`${mode}\``)
+        )
     }
 }
 

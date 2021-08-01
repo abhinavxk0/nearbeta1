@@ -14,7 +14,7 @@ client.commands = new Discord.Collection();
 client.snipes = new Discord.Collection();
 
 client.distube = new DisTube(client, 
-    { searchSongs: false, emitNewSongOnly: true}
+    {searchSongs: false, emitNewSongOnly: true}
     );
 
 client.distube.on("playSong", (message, queue, song) => message.channel.send(
@@ -22,7 +22,7 @@ client.distube.on("playSong", (message, queue, song) => message.channel.send(
         .setColor('#2f3136')
         .setDescription(`**Now Playing:**\n[${song.name}](${song.url}) - \`${song.formattedDuration}\``)
         .setFooter(`Added by: ${song.user.username}`, song.user.displayAvatarURL({ size: 4096, dynamic: true }))
-).then(message => { message.delete({ timeout: 10000 }); }))
+).then(message => { message.delete({ timeout: 60000 }); }))
 
 client.distube.on("addSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
@@ -37,6 +37,9 @@ client.distube.on("empty", message => message.channel.send(
         .setAuthor('Clearing queue and leaving channel!')
         .setFooter('Reason: Disconnect because voice channel is empty!')
 ))
+client.distube.on("error", (message, err) => message.channel.send(
+    "An error encountered: " + err
+));
 
 
 const commandFolders = fs.readdirSync('./commands');
