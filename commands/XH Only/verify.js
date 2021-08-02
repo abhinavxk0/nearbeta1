@@ -8,7 +8,7 @@ module.exports = {
 
         if (message.guild.id !== '768453184464748634') return message.reply('This command can only be used in another server.');
 
-        let role = message.member.guild.roles.cache.find(role => role.name === "ァ Members");
+        let role = message.member.guild.roles.cache.find(role => role.name === "꒷꒦︰Members! ⋆˚. ✦");
         if (role) message.guild.members.cache.get(message.author.id).roles.add(role);
 
         let role1 = message.member.guild.roles.cache.find(role1 => role1.name === "──────Levels──────");
