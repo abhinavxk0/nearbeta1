@@ -4,6 +4,9 @@ module.exports = {
     name: 'steal',
     aliases: ['add_emoji'],
     async execute(client, command, message, args, Discord) {
+
+        if (!message.member.hasPermission("MANAGE_EMOJIS")) return 
+
         if (!args.length) return message.channel.send(
             new Discord.MessageEmbed()
                 .setDescription('Please specify some emojis!')
@@ -20,7 +23,7 @@ module.exports = {
                         new Discord.MessageEmbed()
                             .setAuthor('Successfully added emoji(s)!')
                             .setColor('#defafe')
-                            .setThumbnail(emoji.url)
+                            .setImage(emoji.url)
                     ))
             }
         }

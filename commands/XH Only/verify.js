@@ -2,7 +2,7 @@ module.exports = {
     name: 'verify',
     async execute(client, command, message, args, Discord){
         
-        const { guild, channel } = message
+        const { guild } = message
         const { name } = guild
         const icon = guild.iconURL({ size: 4096, dynamic: true })
 
