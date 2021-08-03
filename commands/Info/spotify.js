@@ -1,5 +1,4 @@
-const Discord = require('discord.js');
-const convert = require('parse-ms')
+const convert = require('parse-ms')   
 module.exports = {
     name: 'spotify',
     aliases: ['track'],
