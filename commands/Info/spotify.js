@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-
+const convert = require('parse-ms')
 module.exports = {
     name: 'spotify',
     aliases: ['track'],
@@ -28,7 +28,14 @@ module.exports = {
                 url = `https://open.spotify.com/track/${status.syncID}`,
                 name = status.details,
                 artist = status.state,
-                album = status.assets.largeText;
+                album = status.assets.largeText,
+                timeStart = status.timestamps.start,
+                timeEnd = status.timestamps.end,
+                timeConvert = convert(timeEnd - timeStart);
+
+            let minutes = timeConvert.minutes < 10 ? `0${timeConvert.minutes}` : timeConvert.minutes;
+            let seconds = timeConvert.seconds < 10 ? `0${timeConvert.seconds}` : timeConvert.seconds;
+            let time = `${minutes}:${seconds}`
 
             const embed = new Discord.MessageEmbed()
                 .setAuthor("Spotify Track Information", "https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-download-logo-30.png")
@@ -37,7 +44,7 @@ module.exports = {
                 .addField('Name:', name, true)
                 .addField('Album:', album, true)
                 .addField('Artist:', artist, true)
-
+                .addField('Duration:', time, true)
                 .addField('Listen now on Spotify!', `[\`${artist} - ${name}\`](${url})`, false)
             return message.channel.send(embed)
 
