@@ -1,5 +1,6 @@
 module.exports = {
     name: 'color',
+    cooldown: 10,
     description: 'sends a random color',
     execute(client, command, message, args, Discord){
         

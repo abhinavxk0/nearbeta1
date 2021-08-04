@@ -9,7 +9,7 @@ module.exports = {
                 .setDescription('You need to be in a voice channel to execute this command!')
         ).then(message => { message.delete({ timeout: 10000 }); })
 
-        let mode = distube.toggleAutoplay(message);
+        let mode = client.distube.toggleAutoplay(message);
         message.lineReplyNoMention(
             new Discord.MessageEmbed()
             .setAuthor('Autoplay Mode')

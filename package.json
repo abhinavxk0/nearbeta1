@@ -12,6 +12,7 @@
     "@discordjs/opus": "^0.5.3",
     "animequote": "^1.1.1",
     "ascii-table": "0.0.9",
+    "canvas": "^2.8.0",
     "corona-info": "^1.0.5",
     "discord-emotes": "^1.5.4",
     "discord-reply": "^0.1.2",
@@ -41,7 +42,7 @@
     "request-promise-native": "^1.0.9",
     "solenolyrics": "^5.0.0",
     "yt-search": "^2.8.0",
-    "ytdl-core": "^4.8.3",
+    "ytdl-core": "^4.9.0",
     "ytsr": "^3.5.0"
   }
 }
