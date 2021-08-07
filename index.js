@@ -37,9 +37,10 @@ client.distube.on("empty", message => message.channel.send(
         .setAuthor('Clearing queue and leaving channel!')
         .setFooter('Reason: Disconnect because voice channel is empty!')
 ))
-client.distube.on("error", (message, err) => message.channel.send(
-    "An error encountered: " + err
-));
+client.distube.on("initQueue", queue => {
+    queue.autoplay = false;
+    queue.volume = 100;
+});
 
 
 const commandFolders = fs.readdirSync('./commands');

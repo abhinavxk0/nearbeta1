@@ -8,6 +8,12 @@ module.exports = {
                 .setColor('#2f3136')
                 .setDescription('You need to be in a voice channel to execute this command!')
         ).then(message => { message.delete({ timeout: 10000 }); })
+        if (!message.member.roles.cache.some(role => role.name === 'DJ')) return message.channel.send(
+            new Discord.MessageEmbed()
+            .setColor('#2f3136')
+            .setTitle('Error!')
+            .setDescription('You need the `DJ` role to stop songs!')        
+        )
 
         let mode = client.distube.toggleAutoplay(message);
         message.lineReplyNoMention(

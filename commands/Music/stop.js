@@ -14,8 +14,7 @@ module.exports = {
             new Discord.MessageEmbed()
             .setColor('#2f3136')
             .setTitle('Error!')
-                
-            .setDescription('> You need the `DJ` role to stop songs!\n To skip songs make a role named `DJ`!')        
+            .setDescription('You need the `DJ` role to stop songs!')        
         )
 
         let queue = await client.distube.getQueue(message);

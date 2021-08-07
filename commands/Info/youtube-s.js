@@ -1,9 +1,9 @@
 const ytsr = require('ytsr');
 const { MessageEmbed } = require('discord.js');
-const yts = require('yt-search');
 
 module.exports = {
     name: 'youtube-s',
+    aliases: ['search'],
     async execute(client, command, message, args, Discord){
         const query = args.join(" ");
         

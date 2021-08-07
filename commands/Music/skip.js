@@ -14,9 +14,9 @@ module.exports = {
         
         if (!message.member.roles.cache.some(role => role.name === 'DJ')) return message.channel.send(
             new Discord.MessageEmbed()
-            .setColor('#defafe')
+            .setColor('#2f3136')
             .setTitle('Error!')
-            .setDescription('> You need the `DJ` role to skip songs!\n To skip songs make a role named `DJ`!')        
+            .setDescription('You need the `DJ` role to stop songs!')        
         )
         
         client.distube.skip(message)
