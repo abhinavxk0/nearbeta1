@@ -19,8 +19,8 @@ module.exports = {
             new Discord.MessageEmbed()
                 .setColor('#2f3136')
                 .setAuthor('Queue')
-                .setDescription(`${queue}` + queue.songs.map((song, id) =>
-                    `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``
+                .setDescription(queue.songs.map((song, id) =>
+                    `**${id + 1}**. [${song.user}]: ${song.name} - \`${song.formattedDuration}\``
                 ).slice(0, 10).join("\n") )
         );
     }
