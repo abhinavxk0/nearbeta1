@@ -1,5 +1,3 @@
-const DisTube = require('distube');
-
 module.exports = {
     name: 'stop',
     category: "music",
