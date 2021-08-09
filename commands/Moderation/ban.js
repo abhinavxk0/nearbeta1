@@ -5,7 +5,7 @@ module.exports = {
 
 
         // Variables
-        const target = await message.mentions.users.first() || 
+        const target = message.mentions.users.first() || 
         message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || 
         x.user.username === args[0]) || client.users.fetch(args[0]) 
 
