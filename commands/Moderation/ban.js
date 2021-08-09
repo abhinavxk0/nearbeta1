@@ -1,9 +1,7 @@
-const { WebhookClient } = require('discord.js')
-
 module.exports = {
     name: 'ban',
     cooldown: 10,
-    async execute(client, command, message, args, Discord){
+    execute(client, command, message, args, Discord){
 
 
         // Variables
