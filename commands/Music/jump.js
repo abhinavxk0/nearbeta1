@@ -11,7 +11,7 @@ module.exports = {
             new Discord.MessageEmbed()
             .setColor('#2f3136')
             .setTitle('Error!')
-            .setDescription('You need the `DJ` role to stop songs!')        
+            .setDescription('You need the `DJ` role to \`jump\` songs!')        
         )
 
         client.distube.jump(message, parseInt(args[0])).catch(

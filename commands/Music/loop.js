@@ -18,7 +18,7 @@ module.exports = {
             new Discord.MessageEmbed()
             .setColor('#2f3136')
             .setTitle('Error!')
-            .setDescription('You need the `DJ` role to stop songs!')        
+            .setDescription('You need the `DJ` role to toggle \`loop\`!')        
         )
         message.channel.send(
             new Discord.MessageEmbed()

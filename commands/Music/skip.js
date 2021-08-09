@@ -16,7 +16,7 @@ module.exports = {
             new Discord.MessageEmbed()
             .setColor('#2f3136')
             .setTitle('Error!')
-            .setDescription('You need the `DJ` role to stop songs!')        
+            .setDescription('You need the `DJ` role to \`skip\` songs!')        
         )
         
         client.distube.skip(message)
