@@ -1,7 +1,6 @@
 {
   "name": "nearbeta",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +12,6 @@
     "animequote": "^1.1.1",
     "ascii-table": "0.0.9",
     "canvas": "^2.8.0",
-    "corona-info": "^1.0.5",
     "discord-emotes": "^1.5.4",
     "discord-reply": "^0.1.2",
     "discord.js": "^12.5.3",
@@ -26,7 +24,7 @@
     "genius-lyrics": "^4.2.9",
     "get": "^1.4.0",
     "got": "^11.8.2",
-    "images-scraper": "^6.3.0",
+    "images-scraper": "^6.4.0",
     "kitsu": "^10.0.0-alpha.13",
     "kitsu.js": "^2.0.0",
     "lyrics-finder": "^21.7.0",
@@ -44,5 +42,14 @@
     "yt-search": "^2.8.0",
     "ytdl-core": "^4.9.0",
     "ytsr": "^3.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xavierk09/nearbeta.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xavierk09/nearbeta/issues"
+  },
+  "homepage": "https://github.com/xavierk09/nearbeta#readme",
+  "description": ""
 }
