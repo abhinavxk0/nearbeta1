@@ -3,7 +3,6 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     name: 'role-info',
-    aliases: [''],
     async execute(client, command, message, args, Discord){
 
 
