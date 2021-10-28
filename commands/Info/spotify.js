@@ -1,7 +1,7 @@
 const convert = require('parse-ms')   
 module.exports = {
     name: 'spotify',
-    aliases: ['track'],
+    aliases: ['track', 'tr', 'sp'],
     async execute(client, command, message, args, Discord) {
         let user;
         if (message.mentions.users.first()) {
