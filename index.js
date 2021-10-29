@@ -143,6 +143,7 @@ client.on('message', async message => {
 
 });
 
+
 client.on('messageDelete', message => {
     let snipes = client.snipes.get(message.channel.id) || [];
     if (snipes.length > 5) snipes = snipes.slice(0, 4)
