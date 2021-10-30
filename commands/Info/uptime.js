@@ -13,6 +13,6 @@ module.exports = {
           d.minutes() == 1 ? `${d.minutes()} minutes` : `${d.minutes()} minutes`;
 
 
-        message.lineReplyNoMention(`Uptime: ${days}, ${hours}, ${minutes}, ${seconds}.`)
+        message.channel.send(`Uptime: ${days}, ${hours}, ${minutes}, ${seconds}.`)
     }
 }

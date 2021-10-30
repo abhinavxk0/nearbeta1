@@ -88,7 +88,7 @@ client.on('message', async message => {
 
             message.channel.send(
                 new Discord.MessageEmbed()
-                    .setDescription(`**${mentionedMember} is AFK for ${timeAgo}!**\n${reason}`)
+                    .setDescription(`${mentionedMember} is AFK for ${timeAgo}!\n${reason}`)
                     .setColor('#defafe')
             ).then(msg => { msg.delete({ timeout: 10000 }); })
         }
@@ -110,7 +110,7 @@ client.on('message', async message => {
     const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if (!command) return;
     if (command.args && !args.length) {
-        return message.channel.send(`> You didn't provide any arguments, ${message.author}!`);
+        return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
     }
     const { cooldowns } = client;
     if (!cooldowns.has(command.name)) {
