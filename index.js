@@ -94,7 +94,6 @@ client.on('message', async message => {
         }
 
     }
-
     const getData = afk.get(message.author.id);
     if (getData) {
         afk.delete(message.author.id)
@@ -104,6 +103,9 @@ client.on('message', async message => {
                 .setColor('#defafe')
         ).then(msg => { msg.delete({ timeout: 10000 }); })
     }
+
+
+    
     if (!message.content.startsWith(prefix) || message.author.bot || (!message.guild)) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();

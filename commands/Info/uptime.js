@@ -3,7 +3,7 @@ const moment = require('moment')
 module.exports = {
     name: 'uptime',
     aliases: ['ut'],
-    async execute(client, message, args, Discord){
+    async execute(client, command, message, args, Discord){
         const d = moment.duration(client.uptime);
         const days = d.days() == 1 ? `${d.days()} day` : `${d.days()} days`;
         const hours = d.hours() == 1 ? `${d.hours()} hour` : `${d.hours()} hours`;
@@ -13,6 +13,6 @@ module.exports = {
           d.minutes() == 1 ? `${d.minutes()} minutes` : `${d.minutes()} minutes`;
 
 
-        message.channel.send(`Uptime: ${days}, ${hours}, ${minutes}, ${seconds}.`)
+        message.lineReply(`Uptime: ${days}, ${hours}, ${minutes}, ${seconds}.`)
     }
 }
