@@ -1,4 +1,3 @@
-const { Client, Message, MessageEmbed } = require('discord.js');
 const { afk } = require('../../Collection')
 
 module.exports = {
@@ -12,7 +11,7 @@ module.exports = {
         ])
         message.channel.send(
             new Discord.MessageEmbed()
-                .setDescription(`You are now AFK : | **${reason}** |`)
+                .setDescription(`You are now AFK :\n${reason}`)
                 .setColor('#defafe')
         )
           

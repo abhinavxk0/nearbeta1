@@ -88,7 +88,7 @@ client.on('message', async message => {
 
             message.channel.send(
                 new Discord.MessageEmbed()
-                    .setDescription(`${mentionedMember} is AFK : ${reason} - (${timeAgo})`)
+                    .setDescription(`${mentionedMember} is AFK :\n${reason} - (${timeAgo})`)
                     .setColor('#defafe')
             ).then(msg => { msg.delete({ timeout: 10000 }); })
         }
