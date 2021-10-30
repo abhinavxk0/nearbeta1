@@ -12,6 +12,7 @@ module.exports = {
         const minutes =
           d.minutes() == 1 ? `${d.minutes()} minutes` : `${d.minutes()} minutes`;
 
-          message.lineReply(`Uptime: ${days}, ${hours}, ${minutes}, ${seconds}.`)
+
+        message.lineReplyNoMention(`Uptime: ${days}, ${hours}, ${minutes}, ${seconds}.`)
     }
 }
