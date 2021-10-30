@@ -88,7 +88,7 @@ client.on('message', async message => {
 
             message.channel.send(
                 new Discord.MessageEmbed()
-                    .setDescription(`${mentionedMember} is AFK :\n${reason} - (${timeAgo})`)
+                    .setDescription(`**${mentionedMember} is AFK for ${timeAgo}!**\n${reason}`)
                     .setColor('#defafe')
             ).then(msg => { msg.delete({ timeout: 10000 }); })
         }
@@ -100,7 +100,7 @@ client.on('message', async message => {
         afk.delete(message.author.id)
         message.channel.send(
             new Discord.MessageEmbed()
-                .setDescription(`You're back, ${message.member}? I reset your AFK!`)
+                .setDescription(`Welcome back ${mentionedMember}! I reset your AFK!`)
                 .setColor('#defafe')
         ).then(msg => { msg.delete({ timeout: 10000 }); })
     }

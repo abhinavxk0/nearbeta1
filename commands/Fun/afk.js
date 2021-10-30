@@ -11,7 +11,7 @@ module.exports = {
         ])
         message.channel.send(
             new Discord.MessageEmbed()
-                .setDescription(`You are now AFK :\n${reason}`)
+                .setDescription(`**Your AFK has been set:**\n${reason}`)
                 .setColor('#defafe')
         )
           
