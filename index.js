@@ -88,31 +88,29 @@ client.on('message', async message => {
 
             message.channel.send(
                 new Discord.MessageEmbed()
-                    .setDescription(`${mentionedMember} is AFK for ${timeAgo}!\n${reason}`)
+                    .setDescription(`${mentionedMember} is AFK : ${reason} - (${timeAgo})`)
                     .setColor('#defafe')
             ).then(msg => { msg.delete({ timeout: 10000 }); })
         }
 
     }
+
     const getData = afk.get(message.author.id);
     if (getData) {
         afk.delete(message.author.id)
         message.channel.send(
             new Discord.MessageEmbed()
-                .setDescription(`Welcome back ${mentionedMember}! I reset your AFK!`)
+                .setDescription(`You're back, ${message.member}? I reset your AFK!`)
                 .setColor('#defafe')
         ).then(msg => { msg.delete({ timeout: 10000 }); })
     }
-
-
-    
     if (!message.content.startsWith(prefix) || message.author.bot || (!message.guild)) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
     const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if (!command) return;
     if (command.args && !args.length) {
-        return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+        return message.channel.send(`> You didn't provide any arguments, ${message.author}!`);
     }
     const { cooldowns } = client;
     if (!cooldowns.has(command.name)) {
@@ -144,7 +142,6 @@ client.on('message', async message => {
 
 
 });
-
 
 client.on('messageDelete', message => {
     let snipes = client.snipes.get(message.channel.id) || [];
