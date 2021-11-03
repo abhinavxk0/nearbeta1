@@ -8,7 +8,7 @@ module.exports = {
 
         const repembed = new Discord.MessageEmbed()
             .setColor('#defafe')
-            .setAuthor(message.author.tag, user.displayAvatar({ size: 4098, dynamic: true }))
+            .setAuthor(message.author.tag, user.displayAvatarURL({ size: 4098, dynamic: true }))
             .setDescription(report)
 
         xavier.send(repembed)
