@@ -55,7 +55,7 @@ module.exports = {
             .setColor('#defafe')
             .setDescription(
                 `
-                \`embed\`, \`help\`, \`invite\`, \`ping\`, \`servers\`, \`snipe\`, \`steal\`, \`enlarge\`, \`uptime\`, \`simprate\`, \`wholesomememe\`, \`youtube-s\`
+                \`report\`, \`embed\`, \`help\`, \`invite\`, \`ping\`, \`servers\`, \`snipe\`, \`steal\`, \`enlarge\`, \`uptime\`, \`simprate\`, \`wholesomememe\`, \`youtube-s\`
                 \n\`⏮️\`: **Previous** _(Info CMDS)_ \n\`⏩\`: **Next** _(null)_
                 `
             )
