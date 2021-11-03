@@ -1,7 +1,7 @@
 module.exports = {
     name: 'report',
     aliases: ['rep'],
-    asyncexecute(client, command, message, args, Discord) {
+    async execute(client, command, message, args, Discord) {
         const report = args.join('');
         const xavier = await client.users.cache.get('307777831625293825')
 
