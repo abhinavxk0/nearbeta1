@@ -4,9 +4,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 const DisTube = require('distube');
-let prefix;
 const { afk } = require('./Collection')
 const moment = require('moment')
+const db = require('quick.db')
 
 
 client.cooldowns = new Discord.Collection();
@@ -104,12 +104,18 @@ client.on('message', async message => {
                 .setColor('#defafe')
         ).then(msg => { msg.delete({ timeout: 10000 }); })
     }
+    let prefix;
+    let prefixes = await db.fetch(`prefix.${message.guild.id}`)
+    if ( prefixes == null){
 
-    let mentionRegex = message.content.match( new RegExp (`^<@!?(${client.user.id})>`, "gi"));
-    if (mentionRegex){
-        prefix = `${mentionRegex[0]}`;
+        let mentionRegex = message.content.match( new RegExp (`^<@!?(${client.user.id})>`, "gi"));
+        if (mentionRegex){
+            prefix = `${mentionRegex[0]}`;
+        } else {
+            prefix = "n!"
+        }
     } else {
-        prefix = "n!"
+        prefix = prefixes;
     }
 
     if (!message.content.startsWith(prefix) || message.author.bot || (!message.guild)) return;
