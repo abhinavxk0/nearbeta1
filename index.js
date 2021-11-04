@@ -62,7 +62,7 @@ client.once('ready', () => {
     client.user.setPresence({
 
         activity: {
-            name: 'n!help || n!ping',
+            name: '@NearBeta prefix',
             type: "LISTENING"
         },
 
@@ -172,14 +172,14 @@ client.on('messageDelete', message => {
 })
 
 client.on("message", async message => {
-    let prexx;
-    let preff = await db.fetch(`prefix.${message.guild.id}`)
-    if (preff == null){
-        prexx == 'n!'
-    } else {
-        prexx == preff
-    }
+    let customPrefix;
+    const dbprefix = await db.fetch(`prefix.${message.guild.id}`)
 
+    if (dbprefix == null){
+        customPrefix = 'n!';
+    } else {
+        customPrefix = dbprefix;
+    }
 
     if (message.author.bot) return false;
 
@@ -189,9 +189,8 @@ client.on("message", async message => {
         message.channel.send(
             new Discord.MessageEmbed()
             .setColor('#defafe')
-            .setThumbnail(client.user.displayAvatarURL({ size: 4096, dynamic: true }))
             .setDescription(
-                `The prefix for ${client.user} is \`${prexx}\`
+                `The prefix for ${client.user} is \`${customPrefix}\`
             **[Invite NearBeta](https://discord.com/oauth2/authorize?client_id=822424076491554827&scope=bot&permissions=8)**
             `
             )

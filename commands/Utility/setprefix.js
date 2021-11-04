@@ -8,7 +8,11 @@ module.exports = {
 
         if (!newprefix) return message.lineReply('Please enter a prefix!')
         if (newprefix.length > 5) return message.lineReply('The prefix you entered was too long! It should be less that 5 characters.')
-        message.lineReply(`The guild's prefix has been set to \`${newprefix}\`! Please note that the mention and default prefix will not work onwards.`)
+        message.lineReply(
+            new Discord.MessageEmbed()
+            .setColor('#defafe')
+            .setDescription(`The **custom prefix** for this server has been set to \`${newprefix}\``)
+            )
         db.set(`prefix.${message.guild.id}`, newprefix)
     }
 }
