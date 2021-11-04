@@ -171,7 +171,7 @@ client.on('messageDelete', message => {
     client.snipes.set(message.channel.id, snipes)
 })
 
-client.on("message", message => {
+client.on("message", async message => {
     let prexx;
     let preff = await db.fetch(`prefix.${message.guild.id}`)
     if (preff == null){
