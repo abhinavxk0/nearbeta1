@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 const DisTube = require('distube');
-const prefix = 'n!';
+let prefix;
 const { afk } = require('./Collection')
 const moment = require('moment')
 
@@ -104,6 +104,14 @@ client.on('message', async message => {
                 .setColor('#defafe')
         ).then(msg => { msg.delete({ timeout: 10000 }); })
     }
+
+    let mentionRegex = message.content.match( new RegExp (`^<@!?(${client.user.id})>`, "gi"));
+    if (mentionRegex){
+        prefix = `${mentionRegex[0]}`;
+    } else {
+        prefix = "n!"
+    }
+
     if (!message.content.startsWith(prefix) || message.author.bot || (!message.guild)) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
