@@ -172,6 +172,15 @@ client.on('messageDelete', message => {
 })
 
 client.on("message", message => {
+    let prexx;
+    let preff = await db.fetch(`prefix.${message.guild.id}`)
+    if (preff == null){
+        prexx == 'n!'
+    } else {
+        prexx == preff
+    }
+
+
     if (message.author.bot) return false;
 
     if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
@@ -182,7 +191,7 @@ client.on("message", message => {
             .setColor('#defafe')
             .setThumbnail(client.user.displayAvatarURL({ size: 4096, dynamic: true }))
             .setDescription(
-                `The prefix for ${client.user} is \`${prefix}\`
+                `The prefix for ${client.user} is \`${prexx}\`
             **[Invite NearBeta](https://discord.com/oauth2/authorize?client_id=822424076491554827&scope=bot&permissions=8)**
             `
             )
