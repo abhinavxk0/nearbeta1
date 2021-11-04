@@ -1,21 +1,21 @@
 require('dotenv').config()
 const Discord = require('discord.js');
-                require('discord-reply')
+require('discord-reply')
 const client = new Discord.Client();
 const fs = require('fs');
 const DisTube = require('distube');
 const { afk } = require('./Collection')
 const moment = require('moment')
 const db = require('quick.db')
-
+let prefix;
 
 client.cooldowns = new Discord.Collection();
 client.commands = new Discord.Collection();
 client.snipes = new Discord.Collection();
 
-client.distube = new DisTube(client, 
-    {searchSongs: false, emitNewSongOnly: true}
-    );
+client.distube = new DisTube(client,
+    { searchSongs: false, emitNewSongOnly: true }
+);
 
 client.distube.on("playSong", (message, queue, song) => message.channel.send(
     new Discord.MessageEmbed()
@@ -70,7 +70,7 @@ client.once('ready', () => {
 
     })
         .catch(console.error);
-    
+
 })
 
 
@@ -104,12 +104,12 @@ client.on('message', async message => {
                 .setColor('#defafe')
         ).then(msg => { msg.delete({ timeout: 10000 }); })
     }
-    let prefix;
-    let prefixes = await db.fetch(`prefix.${message.guild.id}`)
-    if ( prefixes == null){
 
-        let mentionRegex = message.content.match( new RegExp (`^<@!?(${client.user.id})>`, "gi"));
-        if (mentionRegex){
+    let prefixes = await db.fetch(`prefix.${message.guild.id}`)
+    if (prefixes == null) {
+
+        let mentionRegex = message.content.match(new RegExp(`^<@!?(${client.user.id})>`, "gi"));
+        if (mentionRegex) {
             prefix = `${mentionRegex[0]}`;
         } else {
             prefix = "n!"
@@ -171,4 +171,22 @@ client.on('messageDelete', message => {
     client.snipes.set(message.channel.id, snipes)
 })
 
+client.on("message", message => {
+    if (message.author.bot) return false;
+
+    if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
+
+    if (message.mentions.has(client.user.id + " prefix")) {
+        message.channel.send(
+            new Discord.MessageEmbed()
+            .setColor('#defafe')
+            .setThumbnail(client.user.displayAvatarURL({ size: 4096, dynamic: true }))
+            .setDescription(
+                `The prefix for ${client.user} is \`${prefix}\`
+            **[Invite NearBeta](https://discord.com/oauth2/authorize?client_id=822424076491554827&scope=bot&permissions=8)**
+            `
+            )
+        );
+    };
+});
 client.login(process.env.BOT_TOKEN);
