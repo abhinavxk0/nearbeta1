@@ -8,7 +8,7 @@ module.exports = {
             .setDescription(
                 `The prefix for ${client.user} is \`n!\`
         **[Invite NearBeta](https://discord.com/oauth2/authorize?client_id=822424076491554827&scope=bot&permissions=8)**
-        `
-            )
+        `)
+        message.lineReply(embed)
     }
 }
